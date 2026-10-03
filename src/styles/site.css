@@ -293,6 +293,13 @@ footer {
 	text-align: center;
 }
 
+.posters + .promise h2,
+#odd-jobs,
+#questions,
+#additional-services {
+	margin-top: calc(var(--stack) + 2rem);
+}
+
 .ticket ol {
 	margin: 0;
 }
