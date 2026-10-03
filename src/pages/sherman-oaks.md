@@ -26,8 +26,6 @@ nav:
     href: sms:+17473196969
 ---
 
-<p class="pitch"><a href="sms:+17473196969">Text a photo</a> of the pile. We name a price, then show up the same day or the next. You point, we haul.</p>
-
 <p class="closer">Sherman Oaks splits on Ventura Boulevard. South of it the streets climb toward Mulholland, driveways pitch steeply, and we need the gate code before we pull in. North of it are apartments and smaller lots near Van Nuys Boulevard and Sepulveda, where street parking and a narrow garage set the job. The 101 and the 405 meet here, so we plan the route around traffic, not distance.</p>
 
 <p class="closer">The repeat calls: a move-out that has to be empty by Sunday, a garage stuffed past the cars, couches and bed frames after a remodel, brush and broken patio furniture after a windy week. If the pile is on a hillside driveway or up a flight of stairs, say so when you text. It saves a second trip.</p>

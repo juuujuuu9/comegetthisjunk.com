@@ -191,7 +191,12 @@ nav {
 
 h1.lede {
 	margin: var(--stack) 0;
-	font-size: 1.875rem;
+	font-size: 2.8125rem;
+}
+
+h2.lede,
+h2.shout {
+	font-size: 2.8125rem;
 }
 
 .pitch,
@@ -261,6 +266,10 @@ footer {
 	margin: 0;
 }
 
+.posters h3 {
+	font-size: 2.3625rem;
+}
+
 .posters h3,
 .shout,
 .claims {
@@ -293,7 +302,7 @@ footer {
 	text-align: center;
 }
 
-.posters + .promise h2,
+main > .promise h2,
 #odd-jobs,
 #questions,
 #additional-services {

@@ -26,8 +26,6 @@ nav:
     href: sms:+17473196969
 ---
 
-<p class="pitch"><a href="sms:+17473196969">Text a photo</a> of the pile. We name a price, then show up the same day or the next. You point, we haul.</p>
-
 <p class="closer">Reseda runs on long, flat grid blocks of postwar single-story houses and stucco apartment courts, cut by Sherman Way, Vanowen, and Reseda Boulevard. Driveways are short and garages sit at the back of the lot, so the truck either backs in tight or loads from the alley. When the Santa Ana winds blow, half the yards end up with palm fronds and fallen limbs.</p>
 
 <p class="closer">The calls we get here: a one-car garage packed floor to ceiling, a landlord turning a unit before the first of the month, a couch and mattress that need to go sooner than the city's bulky-item pickup can schedule, a backyard with a dead lemon tree and a stack of old fence boards. Send one photo of the whole pile and we price it together.</p>

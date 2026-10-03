@@ -170,10 +170,12 @@ const jsonLd = { '@context': 'https://schema.org', '@graph': jsonLdGraph };
 		<main id="top" class="wrap">
 			<p class="served" id="area" set:html={servedLine} />
 			{frontmatter.pageH1 && <h1 class="lede">{frontmatter.pageH1}</h1>}
-			<slot />
 			{
 				frontmatter.primaryArea && (
 					<>
+						<p class="pitch">
+							<a href={frontmatter.phoneSms}>Text a photo</a> of the pile. We name a price, then show up the same day or the next. You point, we haul.
+						</p>
 						<ul class="posters">
 							<li>
 								<a href={frontmatter.phoneSms}>
@@ -200,6 +202,13 @@ const jsonLd = { '@context': 'https://schema.org', '@graph': jsonLdGraph };
 								</a>
 							</li>
 						</ul>
+					</>
+				)
+			}
+			<slot />
+			{
+				frontmatter.primaryArea && (
+					<>
 						<article class="promise" id="service-promise">
 							<h2 class="shout">We show up</h2>
 							<p>We love our local customers, and it shows.</p>

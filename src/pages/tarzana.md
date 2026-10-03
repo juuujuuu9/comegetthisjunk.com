@@ -26,8 +26,6 @@ nav:
     href: sms:+17473196969
 ---
 
-<p class="pitch"><a href="sms:+17473196969">Text a photo</a> of the pile. We name a price, then show up the same day or the next. You point, we haul.</p>
-
 <p class="closer">North of Ventura, Tarzana is ranch houses on big lots: detached garages, backyard sheds, a pool house nobody has opened since the kids moved out. South of the boulevard the streets climb toward Mulholland, the driveways steepen, and the gate code comes by text before we pull in. Along Ventura and Reseda Boulevard it's apartments, where the elevator and the move-out date set the schedule.</p>
 
 <p class="closer">The calls repeat: a two-car garage that stopped fitting cars, patio furniture and a dead hot tub after a remodel, a yard of branches after a Santa Ana wind, the load an estate sale left behind. The big lots mean a long carry from the back, so a photo of the route helps.</p>
