@@ -1,0 +1,79 @@
+---
+import '../styles/site.css';
+
+interface NavItem {
+	label: string;
+	href: string;
+}
+
+interface Chrome {
+	title: string;
+	description: string;
+	publicName: string;
+	homeHref: string;
+	phoneTel: string;
+	phoneSms: string;
+	callLink: string;
+	textLink: string;
+	areaLine: string;
+	legalName: string;
+	nav: NavItem[];
+}
+
+const { frontmatter } = Astro.props as { frontmatter: Chrome };
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={frontmatter.description} />
+		<title>{frontmatter.title}</title>
+	</head>
+	<body>
+		<div class="banner"></div>
+		<header>
+			<div class="wrap">
+				<p class="name">
+					<a href={frontmatter.homeHref}>{frontmatter.publicName}</a>
+				</p>
+				<nav>
+					<ul>
+						{
+							frontmatter.nav.map((item) => (
+								<li>
+									<a href={item.href}>{item.label}</a>
+								</li>
+							))
+						}
+					</ul>
+				</nav>
+				<ul class="phones">
+					<li>
+						<a href={frontmatter.phoneSms}>{frontmatter.textLink}</a>
+					</li>
+					<li>
+						<a href={frontmatter.phoneTel}>{frontmatter.callLink}</a>
+					</li>
+				</ul>
+			</div>
+		</header>
+		<main id="top" class="wrap">
+			<slot />
+		</main>
+		<footer>
+			<div class="wrap">
+				<ul class="phones">
+					<li>
+						<a href={frontmatter.phoneSms}>{frontmatter.textLink}</a>
+					</li>
+					<li>
+						<a href={frontmatter.phoneTel}>{frontmatter.callLink}</a>
+					</li>
+				</ul>
+				<p>{frontmatter.areaLine}</p>
+				<p>{frontmatter.legalName}</p>
+			</div>
+		</footer>
+	</body>
+</html>
