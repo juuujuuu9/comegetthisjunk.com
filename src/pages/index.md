@@ -35,7 +35,7 @@ nav:
 
 <h2 id="services" class="lede">Got junk? We'll come get it.</h2>
 
-<p class="pitch"><a href="sms:+17473196969">Text a photo</a> of the pile. We name a price, then show up the <a href="#how-it-works">same day or the next</a>. <a href="#service-promise">You point, we haul.</a></p>
+<p class="pitch"><a href="sms:+17473196969">Text a photo</a> of the pile. We name a price,<br class="served-break"> then show up the <a href="#how-it-works">same day or the next</a>. <a href="#service-promise">You point, we haul.</a></p>
 
 <ul class="posters">
 <li><a href="sms:+17473196969"><h3>Got a pile?</h3><p>Text a pic to 747-319-6969</p></a></li>
