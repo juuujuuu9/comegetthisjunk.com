@@ -10,13 +10,12 @@ interface Chrome {
 	title: string;
 	description: string;
 	publicName: string;
-	homeHref: string;
 	phoneTel: string;
 	phoneSms: string;
 	callLink: string;
 	textLink: string;
 	areaLine: string;
-	legalName: string;
+	signoff: string;
 	nav: NavItem[];
 }
 
@@ -28,17 +27,24 @@ const { frontmatter } = Astro.props as { frontmatter: Chrome };
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="description" content={frontmatter.description} />
+		{/* Fontshare only honours the first `f[]`; indexed keys must be encoded to get both families. */}
+		<link
+			rel="stylesheet"
+			href="https://api.fontshare.com/v2/css?f%5B0%5D=tanker@400&f%5B1%5D=switzer@400,700,400i,700i&display=swap"
+		/>
 		<title>{frontmatter.title}</title>
 	</head>
 	<body>
-		<div class="banner"></div>
-		<header>
+		<div class="wordmark">
+			<div class="banner"></div>
 			<div class="wrap">
-				<p class="name">
-					<a href={frontmatter.homeHref}>{frontmatter.publicName}</a>
-				</p>
-				<nav>
-					<ul>
+				<h1><a href="#top">{frontmatter.publicName}</a></h1>
+			</div>
+		</div>
+		<header>
+			<nav>
+				<div class="wrap">
+					<ul class="bursts">
 						{
 							frontmatter.nav.map((item) => (
 								<li>
@@ -47,33 +53,85 @@ const { frontmatter } = Astro.props as { frontmatter: Chrome };
 							))
 						}
 					</ul>
-				</nav>
-				<ul class="phones">
-					<li>
-						<a href={frontmatter.phoneSms}>{frontmatter.textLink}</a>
-					</li>
-					<li>
-						<a href={frontmatter.phoneTel}>{frontmatter.callLink}</a>
-					</li>
-				</ul>
-			</div>
+				</div>
+			</nav>
 		</header>
 		<main id="top" class="wrap">
+			<p class="served" id="area">{frontmatter.areaLine}</p>
 			<slot />
 		</main>
 		<footer>
 			<div class="wrap">
+				<p class="signoff">{frontmatter.signoff}</p>
 				<ul class="phones">
 					<li>
-						<a href={frontmatter.phoneSms}>{frontmatter.textLink}</a>
+						<a class="go" href={frontmatter.phoneSms}>{frontmatter.textLink}</a>
 					</li>
 					<li>
-						<a href={frontmatter.phoneTel}>{frontmatter.callLink}</a>
+						<a class="go go-line" href={frontmatter.phoneTel}>{frontmatter.callLink}</a>
 					</li>
 				</ul>
-				<p>{frontmatter.areaLine}</p>
-				<p>{frontmatter.legalName}</p>
+				<ul class="footer-nav">
+					{
+						frontmatter.nav.map((item) => (
+							<li>
+								<a class="go go-line" href={item.href}>{item.label}</a>
+							</li>
+						))
+					}
+				</ul>
 			</div>
 		</footer>
+		<div class="dock" hidden>
+			<a class="go" href={frontmatter.phoneSms}>Text</a>
+			<a class="go go-line" href={frontmatter.phoneTel}>Call</a>
+		</div>
+		<script>
+			import Lenis from 'lenis';
+			import 'lenis/dist/lenis.css';
+
+			const desktop = matchMedia('(min-width: 40rem)');
+			let lenis: Lenis | undefined;
+
+			document.querySelectorAll('a[href^="#"]').forEach((link) => {
+				link.addEventListener('click', (event) => {
+					if (!lenis || !(link instanceof HTMLAnchorElement) || !link.hash) return;
+					event.preventDefault();
+					lenis.scrollTo(link.hash);
+					history.pushState(null, '', link.hash);
+				});
+			});
+
+			addEventListener('popstate', () => {
+				if (!lenis) return;
+				lenis.scrollTo(location.hash || 0);
+			});
+
+			const startLenis = () => {
+				if (!desktop.matches || lenis) return;
+				lenis = new Lenis({ autoRaf: true });
+			};
+
+			const stopLenis = () => {
+				lenis?.destroy();
+				lenis = undefined;
+			};
+
+			desktop.addEventListener('change', () => (desktop.matches ? startLenis() : stopLenis()));
+			startLenis();
+		</script>
+		<script>
+			const dock = document.querySelector('.dock');
+			const footer = document.querySelector('footer');
+			const mobile = matchMedia('(max-width: 39.99rem)');
+			const sync = () => {
+				const footerOn = footer.getBoundingClientRect().top < innerHeight;
+				dock.hidden = !(scrollY > 40 && !footerOn && mobile.matches);
+			};
+			addEventListener('scroll', sync, { passive: true });
+			addEventListener('resize', sync);
+			mobile.addEventListener('change', sync);
+			sync();
+		</script>
 	</body>
 </html>

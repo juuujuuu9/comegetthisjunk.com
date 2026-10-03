@@ -2,8 +2,15 @@
 	--color-bg: #fff;
 	--color-text: #000;
 	--color-accent: #1b3a8c;
-	--font-body: Arial, Helvetica, sans-serif;
-	--measure: 40rem;
+	--font-display: Tanker, Impact, sans-serif;
+	--font-body: Switzer, Helvetica, sans-serif;
+	--measure: 72rem;
+	--stack: 2.5rem;
+}
+
+html {
+	font-size: 16px;
+	scroll-padding-top: 10rem;
 }
 
 html,
@@ -14,49 +21,53 @@ body {
 	color: var(--color-text);
 	color-scheme: light;
 	font-family: var(--font-body);
-	font-size: 16px;
-	line-height: 1.45;
+	line-height: 1.55;
+}
+
+body {
+	font-size: 1.3rem;
 }
 
 h1,
 h2,
 h3 {
+	margin: var(--stack) 0;
+	font-family: var(--font-display);
 	font-style: normal;
-	font-weight: 700;
+	/* Tanker ships one weight and is already display-heavy; 700 would synthesise. */
+	font-weight: 400;
+	letter-spacing: -0.01em;
 	overflow-wrap: anywhere;
 	min-width: 0;
 	line-height: 1.2;
 }
 
 h1 {
-	margin: 0 0 0.75rem;
-	font-size: 1.75rem;
+	margin-top: 0;
+	font-size: 2.625rem;
 }
 
 h2 {
-	margin: 2rem 0 0.75rem;
-	padding-bottom: 0.25rem;
-	border-bottom: 1px solid var(--color-accent);
-	font-size: 1.25rem;
+	font-size: 1.875rem;
 }
 
 h3 {
-	margin: 1.25rem 0 0.5rem;
-	font-size: 1.05rem;
+	font-size: 1.575rem;
 }
 
 p,
-ul {
-	margin: 0 0 1rem;
+ul,
+ol {
+	margin: 0 0 var(--stack);
 }
 
-ul {
+ul,
+ol {
 	padding-left: 1.25rem;
 }
 
 a {
 	color: var(--color-accent);
-	white-space: nowrap;
 }
 
 a:visited {
@@ -71,7 +82,7 @@ a:focus-visible {
 .wrap {
 	max-width: var(--measure);
 	margin: 0 auto;
-	padding: 0 1rem;
+	padding: 0 2rem;
 }
 
 .banner {
@@ -79,41 +90,290 @@ a:focus-visible {
 	height: 8px;
 }
 
-header {
+.wordmark {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	background: var(--color-bg);
 	border-bottom: 2px solid var(--color-accent);
-	padding: 0.75rem 0 1rem;
+	text-align: center;
 }
 
-.name {
-	margin: 0 0 0.75rem;
-	font-size: 1.5rem;
-	font-weight: 700;
-	font-style: normal;
+.wordmark h1 {
+	margin: var(--stack) 0;
 }
 
-nav ul,
-.phones {
+.wordmark a,
+.wordmark a:visited {
+	color: var(--color-text);
+	text-decoration: none;
+}
+
+.bursts,
+.phones,
+.footer-nav,
+.posters,
+.claims,
+.partners {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 0.35rem 1.25rem;
-	margin: 0;
+	justify-content: center;
+	gap: 1.25rem 2.25rem;
+	margin: 0 0 var(--stack);
 	padding: 0;
 	list-style: none;
 }
 
-.phones {
-	margin-top: 0.75rem;
+nav {
+	padding-top: var(--stack);
 }
 
-main {
-	padding: 1.5rem 0 2.5rem;
+.bursts a,
+.posters a,
+.go {
+	white-space: normal;
+}
+
+.bursts li:nth-child(odd) {
+	transform: rotate(-2deg);
+}
+
+.bursts li:nth-child(even) {
+	transform: rotate(2deg);
+}
+
+.bursts a,
+.bursts a:visited {
+	display: block;
+	border: 2px solid var(--color-text);
+	padding: 0.45rem 0.7rem;
+	background: var(--color-bg);
+	color: var(--color-text);
+	text-align: center;
+	text-decoration: none;
+}
+
+.bursts a:hover,
+.bursts a:hover:visited,
+.bursts a:focus-visible,
+.bursts a:focus-visible:visited {
+	background: var(--color-accent);
+	color: var(--color-bg);
+}
+
+.lede,
+#odd-jobs,
+#additional-services {
+	text-align: center;
+	text-decoration: underline;
+	text-decoration-color: var(--color-accent);
+	text-underline-offset: 0.18em;
+}
+
+.pitch,
+.served,
+.closer,
+.promise,
+footer {
+	text-align: center;
+}
+
+.served {
+	margin-bottom: var(--stack);
+	color: var(--color-accent);
+	font-weight: 700;
+}
+
+.pitch,
+.closer {
+	max-width: 42rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.partners {
+	margin-bottom: var(--stack);
+	padding: 0;
+	list-style: none;
+}
+
+.posters {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--stack);
+}
+
+.posters a,
+.posters a:visited {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 0.35rem;
+	min-height: 9rem;
+	border: 2px solid var(--color-text);
+	padding: 1.75rem 2rem;
+	background: var(--color-bg);
+	color: var(--color-text);
+	text-align: center;
+	text-decoration: none;
+}
+
+.posters h3,
+.posters p {
+	margin: 0;
+}
+
+.posters h3,
+.shout,
+.claims {
+	text-transform: uppercase;
+}
+
+.posters a:hover,
+.posters a:hover:visited,
+.posters a:focus-visible,
+.posters a:focus-visible:visited {
+	background: var(--color-accent);
+	color: var(--color-bg);
+}
+
+.split {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--stack);
+	margin-bottom: var(--stack);
+}
+
+.ticket {
+	border: 2px solid var(--color-text);
+	padding: 0.5rem 2rem 2rem;
+	text-align: left;
+}
+
+.ticket h2,
+.promise h2 {
+	text-align: center;
+}
+
+.ticket ol {
+	margin: 0;
+}
+
+.claims {
+	flex-direction: column;
+	align-items: center;
+	gap: 0.65rem;
+	font-weight: 700;
+}
+
+.actions {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 1.25rem 1.75rem;
+}
+
+.go,
+.go:visited {
+	display: inline-block;
+	border: 2px solid var(--color-accent);
+	padding: 0.35rem 0.75rem;
+	background: var(--color-accent);
+	color: var(--color-bg);
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.go-line,
+.go-line:visited {
+	background: var(--color-bg);
+	color: var(--color-accent);
+}
+
+.go:hover,
+.go:hover:visited,
+.go:focus-visible,
+.go:focus-visible:visited {
+	background: var(--color-bg);
+	color: var(--color-accent);
+}
+
+.go-line:hover,
+.go-line:hover:visited,
+.go-line:focus-visible,
+.go-line:focus-visible:visited {
+	background: var(--color-accent);
+	color: var(--color-bg);
+}
+
+.signoff {
+	font-weight: 700;
+	font-size: 1.5em;
+	font-style: italic;
+}
+
+.phones a {
+	white-space: nowrap;
+}
+
+main.wrap {
+	padding-top: var(--stack);
 }
 
 footer {
 	border-top: 2px solid var(--color-accent);
-	padding: 1rem 0 2rem;
+	padding: var(--stack) 0;
 }
 
-footer p {
-	margin: 0 0 0.35rem;
+footer p:last-child {
+	margin-bottom: 0;
+}
+
+.dock {
+	display: none;
+}
+
+@media (max-width: 39.99rem) {
+	.dock:not([hidden]) {
+		position: fixed;
+		z-index: 2;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: flex;
+		gap: 0.75rem;
+		border-top: 2px solid var(--color-accent);
+		padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
+		background: var(--color-bg);
+	}
+
+	.dock .go {
+		flex: 1 1 0;
+		text-align: center;
+	}
+}
+
+@media (min-width: 40rem) {
+	.posters,
+	.split {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 3rem 3.5rem;
+	}
+
+	.posters li:nth-child(1) {
+		transform: rotate(-1.2deg);
+	}
+
+	.posters li:nth-child(2) {
+		transform: rotate(1deg);
+	}
+
+	.posters li:nth-child(3) {
+		transform: rotate(1deg);
+	}
+
+	.posters li:nth-child(4) {
+		transform: rotate(-1.1deg);
+	}
 }
