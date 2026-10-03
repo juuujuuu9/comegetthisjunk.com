@@ -28,8 +28,8 @@ nav:
 
 <p class="pitch"><a href="sms:+17473196969">Text a photo</a> of the pile. We name a price, then show up the same day or the next. You point, we haul.</p>
 
-<p class="closer">Reseda is mostly single-family blocks and older apartments: garages packed to the door, a backyard of brush after the winds, a unit that has to be empty by the first. Sherman Way and Reseda Boulevard set the map. Street parking is tight and the alley is often the only way the truck gets close.</p>
+<p class="closer">Reseda runs on long, flat grid blocks of postwar single-story houses and stucco apartment courts, cut by Sherman Way, Vanowen, and Reseda Boulevard. Driveways are short and garages sit at the back of the lot, so the truck either backs in tight or loads from the alley. When the Santa Ana winds blow, half the yards end up with palm fronds and fallen limbs.</p>
 
-<p class="closer">The usual jobs: a garage that stopped holding cars, furniture left after a roommate moved, yard waste, an estate that needs the house emptied. Text a photo of the pile and we name the price. The truck is usually there the same day or the next.</p>
+<p class="closer">The calls we get here: a one-car garage packed floor to ceiling, a landlord turning a unit before the first of the month, a couch and mattress that need to go sooner than the city's bulky-item pickup can schedule, a backyard with a dead lemon tree and a stack of old fence boards. Send one photo of the whole pile and we price it together.</p>
 
 <p class="actions"><a class="go" href="sms:+17473196969">Text 747-319-6969</a> <a class="go go-line" href="tel:+17473196969">Call 747-319-6969</a></p>
