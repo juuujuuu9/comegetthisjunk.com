@@ -38,7 +38,7 @@ nav:
 <h2>How it works</h2>
 <ol>
 <li>Snap a pic. <a href="sms:+17473196969">Text us</a> a photo of your stuff.</li>
-<li>Get your price. A photo covers most piles. A big or complete job, we come look in person the same day and quote you there.</li>
+<li>Get your price. A photo covers most piles. For a big or complex job, we come look in person the same day and quote you there.</li>
 <li>We haul it away. Same day or next day in most cases. You don't lift a finger.</li>
 </ol>
 </article>
