@@ -208,6 +208,10 @@ footer {
 	font-weight: 700;
 }
 
+.served-break {
+	display: none;
+}
+
 .pitch,
 .closer {
 	max-width: 42rem;
@@ -344,6 +348,25 @@ footer {
 	font-weight: 700;
 	font-size: 1.5em;
 	font-style: italic;
+}
+
+.footer-nav .go-line,
+.footer-nav .go-line:visited {
+	border-color: var(--color-text);
+	color: var(--color-text);
+}
+
+.footer-nav .go-line:hover,
+.footer-nav .go-line:hover:visited,
+.footer-nav .go-line:focus-visible,
+.footer-nav .go-line:focus-visible:visited {
+	background: var(--color-text);
+	color: var(--color-bg);
+}
+
+.footer-areas a {
+	font-weight: 700;
+	text-decoration: underline;
 }
 
 .legal {
@@ -490,6 +513,10 @@ footer p:last-child {
 }
 
 @media (min-width: 40rem) {
+	.served-break {
+		display: block;
+	}
+
 	.head-phones {
 		display: flex;
 		margin-bottom: 0;

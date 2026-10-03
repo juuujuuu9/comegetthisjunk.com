@@ -1,9 +1,15 @@
 ---
+import { alsoHauls, areaLinks, areas } from '../areas';
 import '../styles/site.css';
 
 interface NavItem {
 	label: string;
 	href: string;
+}
+
+interface FaqItem {
+	question: string;
+	answer: string;
 }
 
 interface Chrome {
@@ -15,8 +21,9 @@ interface Chrome {
 	phoneSms: string;
 	callLink: string;
 	textLink: string;
-	areaLine: string;
 	pageH1?: string;
+	primaryArea?: string;
+	faq?: FaqItem[];
 	signoff: string;
 	nav: NavItem[];
 }
@@ -26,23 +33,55 @@ const origin = 'https://comegetthisjunk.com';
 const site = `${origin}/`;
 const path = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
 const canonical = new URL(path, origin).href;
-const jsonLd = {
-	'@context': 'https://schema.org',
+const image = new URL('wordmark.png', site).href;
+const tel = frontmatter.phoneTel.replace(/^tel:/, '');
+const cityNames = areas.map((area) => area.name);
+const areaServed = [
+	...(frontmatter.primaryArea
+		? [frontmatter.primaryArea, ...cityNames.filter((name) => name !== frontmatter.primaryArea)]
+		: cityNames
+	).map((name) => ({ '@type': 'City', name })),
+	{ '@type': 'AdministrativeArea', name: 'San Fernando Valley' },
+];
+const servedLine = areaLinks(frontmatter.primaryArea);
+const localBusiness = {
 	'@type': 'LocalBusiness',
+	'@id': `${site}#business`,
 	name: frontmatter.publicName,
 	legalName: frontmatter.legalName,
 	url: site,
-	telephone: frontmatter.phoneTel.replace(/^tel:/, ''),
+	telephone: tel,
 	description: frontmatter.description,
-	image: new URL('wordmark.png', site).href,
-	areaServed: [
-		...['Woodland Hills', 'Tarzana', 'Reseda', 'Encino', 'Sherman Oaks'].map((name) => ({
-			'@type': 'City',
-			name,
-		})),
-		{ '@type': 'AdministrativeArea', name: 'San Fernando Valley' },
-	],
+	image,
+	areaServed,
 };
+const webPage = {
+	'@type': 'WebPage',
+	'@id': `${canonical}#webpage`,
+	url: canonical,
+	name: frontmatter.title,
+	description: frontmatter.description,
+	isPartOf: { '@id': `${site}#business` },
+	about: { '@id': `${site}#business` },
+};
+const jsonLdGraph = [
+	localBusiness,
+	webPage,
+	...(frontmatter.faq?.length
+		? [
+				{
+					'@type': 'FAQPage',
+					'@id': `${canonical}#faq`,
+					mainEntity: frontmatter.faq.map(({ question, answer }) => ({
+						'@type': 'Question',
+						name: question,
+						acceptedAnswer: { '@type': 'Answer', text: answer },
+					})),
+				},
+			]
+		: []),
+];
+const jsonLd = { '@context': 'https://schema.org', '@graph': jsonLdGraph };
 ---
 
 <html lang="en">
@@ -51,6 +90,17 @@ const jsonLd = {
 		<meta name="viewport" content="width=device-width" />
 		<meta name="description" content={frontmatter.description} />
 		<link rel="canonical" href={canonical} />
+		<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM site summary" />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content={frontmatter.publicName} />
+		<meta property="og:title" content={frontmatter.title} />
+		<meta property="og:description" content={frontmatter.description} />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:image" content={image} />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content={frontmatter.title} />
+		<meta name="twitter:description" content={frontmatter.description} />
+		<meta name="twitter:image" content={image} />
 		<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 		{/* Fontshare only honours the first `f[]`; indexed keys must be encoded to get both families. */}
 		<link
@@ -118,9 +168,55 @@ const jsonLd = {
 			</div>
 		</header>
 		<main id="top" class="wrap">
-			<p class="served" id="area" set:html={frontmatter.areaLine} />
+			<p class="served" id="area" set:html={servedLine} />
 			{frontmatter.pageH1 && <h1 class="lede">{frontmatter.pageH1}</h1>}
 			<slot />
+			{
+				frontmatter.primaryArea && (
+					<>
+						<ul class="posters">
+							<li>
+								<a href={frontmatter.phoneSms}>
+									<h3>Got a pile?</h3>
+									<p>Text a pic</p>
+								</a>
+							</li>
+							<li>
+								<a href="/#how-it-works">
+									<h3>Your price</h3>
+									<p>Up front</p>
+								</a>
+							</li>
+							<li>
+								<a href="#area">
+									<h3>The San Fernando Valley</h3>
+									<p>We drive out</p>
+								</a>
+							</li>
+							<li>
+								<a href="/#odd-jobs">
+									<h3>Odd jobs</h3>
+									<p>Just ask</p>
+								</a>
+							</li>
+						</ul>
+						<article class="promise" id="service-promise">
+							<h2 class="shout">We show up</h2>
+							<p>We love our local customers, and it shows.</p>
+							<ul class="claims">
+								<li>On time</li>
+								<li>Careful in the house</li>
+								<li>Cleaner than we found it</li>
+							</ul>
+							<p class="actions">
+								<a class="go" href={frontmatter.phoneSms}>{frontmatter.textLink}</a>
+								<a class="go go-line" href={frontmatter.phoneTel}>{frontmatter.callLink}</a>
+							</p>
+						</article>
+						<p class="closer" set:html={alsoHauls(frontmatter.primaryArea)} />
+					</>
+				)
+			}
 		</main>
 		<footer>
 			<div class="wrap">
@@ -138,6 +234,15 @@ const jsonLd = {
 						frontmatter.nav.map((item) => (
 							<li>
 								<a class="go go-line" href={item.href}>{item.label}</a>
+							</li>
+						))
+					}
+				</ul>
+				<ul class="footer-nav footer-areas">
+					{
+						areas.map((area) => (
+							<li>
+								<a href={`/${area.slug}/`}>{area.name}</a>
 							</li>
 						))
 					}

@@ -8,8 +8,16 @@ phoneTel: "tel:+17473196969"
 phoneSms: "sms:+17473196969"
 callLink: Call 747-319-6969
 textLink: Text 747-319-6969
-areaLine: '<a href="/woodland-hills/">Woodland Hills</a>, <a href="/tarzana/">Tarzana</a>, Reseda, Encino, Sherman Oaks, and the San Fernando Valley around them.'
 signoff: You point, we haul.
+faq:
+  - question: Where do you haul?
+    answer: Woodland Hills, Tarzana, Reseda, Encino, Sherman Oaks, and the San Fernando Valley around them. Text or call 747-319-6969.
+  - question: How do you price it?
+    answer: Text a photo of the pile. We name a price up front. A photo covers most piles. For a big or complex job, we come look in person the same day and quote you there.
+  - question: How soon can you come?
+    answer: Same day or next day in most cases.
+  - question: What do you take?
+    answer: Furniture, yard cleanup, small demo, apartment and garage cleanouts, and estate cleanouts. Ask if you are not sure.
 nav:
   - label: Haul it
     href: "#services"
@@ -63,7 +71,7 @@ nav:
 <h2 id="questions">Questions</h2>
 <div class="answers">
 <h3>Where do you haul?</h3>
-<p class="closer"><a href="/woodland-hills/">Woodland Hills</a>, <a href="/tarzana/">Tarzana</a>, Reseda, Encino, Sherman Oaks, and the San Fernando Valley around them. <a href="sms:+17473196969">Text</a> or <a href="tel:+17473196969">call 747-319-6969</a>.</p>
+<p class="closer"><a href="/woodland-hills/">Woodland Hills</a>, <a href="/tarzana/">Tarzana</a>, <a href="/reseda/">Reseda</a>, <a href="/encino/">Encino</a>, <a href="/sherman-oaks/">Sherman Oaks</a>, and the San Fernando Valley around them. <a href="sms:+17473196969">Text</a> or <a href="tel:+17473196969">call 747-319-6969</a>.</p>
 <h3>How do you price it?</h3>
 <p class="closer">Text a photo of the pile. We name a price up front. A photo covers most piles. For a big or complex job, we come look in person the same day and quote you there.</p>
 <h3>How soon can you come?</h3>
@@ -79,6 +87,7 @@ nav:
 <li>ADUs</li>
 <li>Home improvement</li>
 <li>Designs and plans</li>
+<li>Just ask</li>
 </ul>
 
 <p class="closer">Licensed pros, not just guys with a truck.</p>
