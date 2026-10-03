@@ -10,16 +10,39 @@ interface Chrome {
 	title: string;
 	description: string;
 	publicName: string;
+	legalName: string;
 	phoneTel: string;
 	phoneSms: string;
 	callLink: string;
 	textLink: string;
 	areaLine: string;
+	pageH1?: string;
 	signoff: string;
 	nav: NavItem[];
 }
 
 const { frontmatter } = Astro.props as { frontmatter: Chrome };
+const origin = 'https://comegetthisjunk.com';
+const site = `${origin}/`;
+const path = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
+const canonical = new URL(path, origin).href;
+const jsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'LocalBusiness',
+	name: frontmatter.publicName,
+	legalName: frontmatter.legalName,
+	url: site,
+	telephone: frontmatter.phoneTel.replace(/^tel:/, ''),
+	description: frontmatter.description,
+	image: new URL('wordmark.png', site).href,
+	areaServed: [
+		...['Woodland Hills', 'Tarzana', 'Reseda', 'Encino', 'Sherman Oaks'].map((name) => ({
+			'@type': 'City',
+			name,
+		})),
+		{ '@type': 'AdministrativeArea', name: 'San Fernando Valley' },
+	],
+};
 ---
 
 <html lang="en">
@@ -27,6 +50,8 @@ const { frontmatter } = Astro.props as { frontmatter: Chrome };
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="description" content={frontmatter.description} />
+		<link rel="canonical" href={canonical} />
+		<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 		{/* Fontshare only honours the first `f[]`; indexed keys must be encoded to get both families. */}
 		<link
 			rel="stylesheet"
@@ -38,16 +63,40 @@ const { frontmatter } = Astro.props as { frontmatter: Chrome };
 		<div class="wordmark">
 			<div class="banner"></div>
 			<div class="wrap">
-				<h1>
-					<a href="#top">
-						<img src="/wordmark.png" alt={frontmatter.publicName} />
-					</a>
-				</h1>
+				{
+					frontmatter.pageH1 ? (
+						<div class="logo">
+							<a href="/">
+								<img src="/wordmark.png" alt={frontmatter.publicName} />
+							</a>
+						</div>
+					) : (
+						<h1>
+							<a href="#top">
+								<img src="/wordmark.png" alt={frontmatter.publicName} />
+							</a>
+						</h1>
+					)
+				}
+				<button class="menu" type="button" aria-expanded="false" aria-controls="menu-drop" aria-label="Menu">
+					<span class="menu-bars"></span>
+				</button>
+			</div>
+			<div class="menu-drop" id="menu-drop">
+				<ul class="bursts">
+					{
+						frontmatter.nav.map((item) => (
+							<li>
+								<a href={item.href}>{item.label}</a>
+							</li>
+						))
+					}
+				</ul>
 			</div>
 		</div>
 		<header>
-			<nav>
-				<div class="wrap">
+			<div class="wrap">
+				<nav>
 					<ul class="bursts">
 						{
 							frontmatter.nav.map((item) => (
@@ -57,11 +106,20 @@ const { frontmatter } = Astro.props as { frontmatter: Chrome };
 							))
 						}
 					</ul>
-				</div>
-			</nav>
+				</nav>
+				<ul class="phones head-phones">
+					<li>
+						<a class="go" href={frontmatter.phoneSms}>{frontmatter.textLink}</a>
+					</li>
+					<li>
+						<a class="go go-line" href={frontmatter.phoneTel}>{frontmatter.callLink}</a>
+					</li>
+				</ul>
+			</div>
 		</header>
 		<main id="top" class="wrap">
-			<p class="served" id="area">{frontmatter.areaLine}</p>
+			<p class="served" id="area" set:html={frontmatter.areaLine} />
+			{frontmatter.pageH1 && <h1 class="lede">{frontmatter.pageH1}</h1>}
 			<slot />
 		</main>
 		<footer>
@@ -84,6 +142,7 @@ const { frontmatter } = Astro.props as { frontmatter: Chrome };
 						))
 					}
 				</ul>
+				<p class="legal">{frontmatter.legalName}</p>
 			</div>
 		</footer>
 		<div class="dock" hidden>
@@ -95,7 +154,13 @@ const { frontmatter } = Astro.props as { frontmatter: Chrome };
 			import 'lenis/dist/lenis.css';
 
 			const desktop = matchMedia('(min-width: 40rem)');
+			const wordmark = document.querySelector('.wordmark');
 			let lenis: Lenis | undefined;
+
+			new ResizeObserver(() => {
+				const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+				document.documentElement.style.scrollPaddingTop = `${wordmark.getBoundingClientRect().height + rem}px`;
+			}).observe(wordmark);
 
 			document.querySelectorAll('a[href^="#"]').forEach((link) => {
 				link.addEventListener('click', (event) => {
@@ -123,6 +188,20 @@ const { frontmatter } = Astro.props as { frontmatter: Chrome };
 
 			desktop.addEventListener('change', () => (desktop.matches ? startLenis() : stopLenis()));
 			startLenis();
+		</script>
+		<script>
+			const menu = document.querySelector('.menu');
+			const closeMenu = () => menu.setAttribute('aria-expanded', 'false');
+
+			menu.addEventListener('click', () => {
+				menu.setAttribute('aria-expanded', menu.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+			});
+			document.querySelector('#menu-drop').addEventListener('click', (event) => {
+				if (event.target instanceof Element && event.target.closest('a')) closeMenu();
+			});
+			addEventListener('keydown', (event) => {
+				if (event.key === 'Escape') closeMenu();
+			});
 		</script>
 		<script>
 			const dock = document.querySelector('.dock');

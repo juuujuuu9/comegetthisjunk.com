@@ -10,7 +10,6 @@
 
 html {
 	font-size: 16px;
-	scroll-padding-top: 10rem;
 }
 
 @media (max-width: 39.99rem) and (prefers-reduced-motion: no-preference) {
@@ -105,7 +104,8 @@ a:focus-visible {
 	text-align: center;
 }
 
-.wordmark h1 {
+.wordmark h1,
+.wordmark .logo {
 	margin: 1.5rem 0;
 }
 
@@ -120,6 +120,11 @@ a:focus-visible {
 .wordmark a:visited {
 	color: var(--color-text);
 	text-decoration: none;
+}
+
+.menu,
+.menu-drop {
+	display: none;
 }
 
 .bursts,
@@ -176,11 +181,17 @@ nav {
 
 .lede,
 #odd-jobs,
+#questions,
 #additional-services {
 	text-align: center;
 	text-decoration: underline;
 	text-decoration-color: var(--color-accent);
 	text-underline-offset: 0.18em;
+}
+
+h1.lede {
+	margin: var(--stack) 0;
+	font-size: 1.875rem;
 }
 
 .pitch,
@@ -202,6 +213,14 @@ footer {
 	max-width: 42rem;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.answers {
+	text-align: center;
+}
+
+.answers h3 {
+	margin-bottom: 0.4rem;
 }
 
 .partners {
@@ -327,8 +346,17 @@ footer {
 	font-style: italic;
 }
 
+.legal {
+	margin-bottom: 0;
+	font-size: 0.85em;
+}
+
 .phones a {
 	white-space: nowrap;
+}
+
+.head-phones {
+	display: none;
 }
 
 main.wrap {
@@ -349,6 +377,99 @@ footer p:last-child {
 }
 
 @media (max-width: 39.99rem) {
+	.wordmark .wrap {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+	}
+
+	.wordmark h1,
+	.wordmark .logo {
+		flex: 1 1 auto;
+		min-width: 0;
+		margin: 1rem 0;
+	}
+
+	.wordmark img {
+		width: 100%;
+		margin: 0;
+	}
+
+	.menu {
+		display: grid;
+		flex: 0 0 auto;
+		place-items: center;
+		width: 2.75rem;
+		height: 2.75rem;
+		padding: 0;
+		border: 0;
+		background: transparent;
+		color: #000;
+		cursor: pointer;
+	}
+
+	.menu:focus-visible {
+		outline: 2px solid #000;
+		outline-offset: 2px;
+	}
+
+	.menu-bars,
+	.menu-bars::before,
+	.menu-bars::after {
+		display: block;
+		width: 1.35rem;
+		height: 2px;
+		background: currentColor;
+		content: "";
+	}
+
+	.menu-bars {
+		position: relative;
+	}
+
+	.menu-bars::before,
+	.menu-bars::after {
+		position: absolute;
+		left: 0;
+	}
+
+	.menu-bars::before {
+		top: -0.4rem;
+	}
+
+	.menu-bars::after {
+		top: 0.4rem;
+	}
+
+	.menu[aria-expanded="true"] .menu-bars {
+		background: transparent;
+	}
+
+	.menu[aria-expanded="true"] .menu-bars::before {
+		top: 0;
+		transform: rotate(45deg);
+	}
+
+	.menu[aria-expanded="true"] .menu-bars::after {
+		top: 0;
+		transform: rotate(-45deg);
+	}
+
+	.wordmark:has(.menu[aria-expanded="true"]) .menu-drop {
+		display: block;
+		position: absolute;
+		top: 100%;
+		right: 0;
+		left: 0;
+		border-bottom: 2px solid var(--color-accent);
+		padding: 1.25rem 2rem 0.25rem;
+		background: var(--color-bg);
+	}
+
+	.menu-drop .bursts {
+		margin-bottom: 1rem;
+	}
+
 	.dock:not([hidden]) {
 		position: fixed;
 		z-index: 2;
@@ -369,6 +490,11 @@ footer p:last-child {
 }
 
 @media (min-width: 40rem) {
+	.head-phones {
+		display: flex;
+		margin-bottom: 0;
+	}
+
 	.posters,
 	.split {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
