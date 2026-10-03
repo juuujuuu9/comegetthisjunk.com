@@ -1,0 +1,9 @@
+[submodule "vendor/ponytail"]
+	path = vendor/ponytail
+	url = https://github.com/DietrichGebert/ponytail.git
+[submodule "vendor/hallmark"]
+	path = vendor/hallmark
+	url = https://github.com/Nutlope/hallmark.git
+[submodule "vendor/stop-slop"]
+	path = vendor/stop-slop
+	url = https://github.com/hardikpandya/stop-slop.git
