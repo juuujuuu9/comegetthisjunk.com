@@ -194,6 +194,7 @@ footer {
 .partners {
 	margin-bottom: var(--stack);
 	padding: 0;
+	font-weight: 700;
 	list-style: none;
 }
 
