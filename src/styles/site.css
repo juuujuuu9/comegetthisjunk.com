@@ -106,7 +106,14 @@ a:focus-visible {
 }
 
 .wordmark h1 {
-	margin: var(--stack) 0;
+	margin: 1.5rem 0;
+}
+
+.wordmark img {
+	display: block;
+	width: min(100%, 34rem);
+	height: auto;
+	margin: 0 auto;
 }
 
 .wordmark a,

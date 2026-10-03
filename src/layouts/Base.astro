@@ -38,7 +38,11 @@ const { frontmatter } = Astro.props as { frontmatter: Chrome };
 		<div class="wordmark">
 			<div class="banner"></div>
 			<div class="wrap">
-				<h1><a href="#top">{frontmatter.publicName}</a></h1>
+				<h1>
+					<a href="#top">
+						<img src="/wordmark.png" alt={frontmatter.publicName} />
+					</a>
+				</h1>
 			</div>
 		</div>
 		<header>
