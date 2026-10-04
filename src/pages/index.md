@@ -68,6 +68,8 @@ nav:
 <h2 id="odd-jobs">Odd jobs</h2>
 <p class="closer">We also move furniture, clean up a yard, and handle small demo. Apartment, garage, and estate cleanouts are the same call. Ask us.</p>
 
+<div class="zoom"><button type="button" aria-label="Enlarge photo"><img class="photo" src="/before-after.jpg" width="1024" height="572" alt="A split-screen comparison showing a large amount of furniture and household items scattered outside a house (Before - Stage 1) versus the same items neatly and efficiently packed floor-to-ceiling inside a storage unit (After - Stage 2)."></button></div>
+
 <h2 id="questions">Questions</h2>
 <div class="answers">
 <h3>Where do you haul?</h3>

@@ -402,6 +402,72 @@ main.wrap {
 	padding-top: var(--stack);
 }
 
+.photo {
+	display: block;
+	width: min(100%, 36rem);
+	height: auto;
+	margin: 0 auto var(--stack);
+}
+
+.zoom button {
+	display: block;
+	width: min(100%, 36rem);
+	margin: 0 auto var(--stack);
+	padding: 0;
+	border: 0;
+	background: none;
+	cursor: zoom-in;
+}
+
+.zoom .photo {
+	width: 100%;
+	margin: 0;
+}
+
+.lightbox {
+	width: 100vw;
+	height: 100dvh;
+	max-width: none;
+	max-height: none;
+	padding: 0;
+	border: 0;
+	background: rgb(0 0 0 / 0.92);
+	overflow: auto;
+	overscroll-behavior: contain;
+}
+
+.lightbox[open] {
+	display: flex;
+}
+
+/* margin:auto centres small images and still lets zoomed ones scroll from the top-left. */
+.lightbox img {
+	flex: none;
+	width: 100vw;
+	height: auto;
+	margin: auto;
+	cursor: zoom-in;
+}
+
+.lightbox.zoomed img {
+	width: 250vw;
+	cursor: zoom-out;
+}
+
+.lightbox-close {
+	position: fixed;
+	top: 0.75rem;
+	right: 0.75rem;
+	width: 2.75rem;
+	height: 2.75rem;
+	border: 2px solid var(--color-bg);
+	background: var(--color-text);
+	color: var(--color-bg);
+	font-size: 1.75rem;
+	line-height: 1;
+	cursor: pointer;
+}
+
 footer {
 	border-top: 2px solid var(--color-accent);
 	padding: var(--stack) 0;
@@ -416,6 +482,10 @@ footer p:last-child {
 }
 
 @media (max-width: 39.99rem) {
+	header {
+		display: none;
+	}
+
 	.wordmark .wrap {
 		display: flex;
 		align-items: center;
@@ -525,6 +595,18 @@ footer p:last-child {
 	.dock .go {
 		flex: 1 1 0;
 		text-align: center;
+	}
+
+	.dock .go {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.4rem;
+	}
+
+	.dock svg {
+		width: 1.1em;
+		height: 1.1em;
 	}
 }
 
