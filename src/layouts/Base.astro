@@ -239,7 +239,7 @@ const jsonLd = { '@context': 'https://schema.org', '@graph': jsonLdGraph };
 			{inner && <Pitch sms={frontmatter.phoneSms} hook={!frontmatter.primaryArea} />}
 			{
 				inner && frontmatter.faq?.length > 0 && (
-					<>
+					<section class="band band-ice">
 						<h2 id="questions">Questions</h2>
 						<div class="answers">
 							{frontmatter.faq.map(({ question, answer }) => (
@@ -249,12 +249,12 @@ const jsonLd = { '@context': 'https://schema.org', '@graph': jsonLdGraph };
 								</>
 							))}
 						</div>
-					</>
+					</section>
 				)
 			}
 			{
 				(haul.length > 0 || pro.length > 0) && (
-					<>
+					<section class="band band-frost">
 						{haul.length > 0 && (
 							<>
 								<h2 id="what-we-haul">{frontmatter.primaryArea ? `What we haul in ${frontmatter.primaryArea}` : 'What we haul'}</h2>
@@ -279,12 +279,12 @@ const jsonLd = { '@context': 'https://schema.org', '@graph': jsonLdGraph };
 								</ul>
 							</>
 						)}
-					</>
+					</section>
 				)
 			}
 			{
 				inner && (
-					<>
+					<section class="band band-ice">
 						<article class="promise" id="service-promise">
 							<h2 class="shout">We show up</h2>
 							<p>We love our local customers, and it shows.</p>
@@ -299,7 +299,7 @@ const jsonLd = { '@context': 'https://schema.org', '@graph': jsonLdGraph };
 							</p>
 						</article>
 						{frontmatter.primaryArea && <p class="closer" set:html={alsoHauls(frontmatter.primaryArea)} />}
-					</>
+					</section>
 				)
 			}
 		</main>

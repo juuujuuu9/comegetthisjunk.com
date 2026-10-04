@@ -332,9 +332,38 @@ footer {
 	margin: var(--section) 0 var(--stack);
 }
 
+/* Tinted bands run edge to edge: the shadow and clip-path carry the colour past the centred column. */
+.band {
+	display: flow-root;
+	padding-bottom: var(--section);
+	background: var(--band);
+	box-shadow: 0 0 0 100vmax var(--band);
+	clip-path: inset(0 -100vmax);
+}
+
+.band-frost {
+	--band: #f4f7fb;
+}
+
+.band-ice {
+	--band: #eaf0f8;
+}
+
+.band > :last-child,
+.band > :last-child > :last-child {
+	margin-bottom: 0;
+}
+
+/* Each band's first heading already carries the section margin, which flow-root keeps inside the tint. */
+.split.band {
+	margin: 0;
+	padding-top: var(--section);
+}
+
 .ticket {
 	border: 2px solid var(--color-text);
 	padding: 0.5rem 2rem 2rem;
+	background: var(--color-bg);
 	text-align: left;
 }
 
@@ -345,7 +374,7 @@ footer {
 
 /* Every new topic starts after the same large break. */
 .section,
-main > .promise h2,
+.band > .promise h2,
 #odd-jobs,
 #questions,
 #what-we-haul,

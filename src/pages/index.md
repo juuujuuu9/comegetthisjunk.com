@@ -44,7 +44,7 @@ nav:
 <li><a href="#odd-jobs"><h3>Odd jobs</h3><p>Just ask</p></a></li>
 </ul>
 
-<div class="split">
+<div class="split band band-ice">
 <article class="ticket" id="how-it-works">
 <h2>How it works</h2>
 <ol>
@@ -70,6 +70,7 @@ nav:
 
 <div class="zoom"><button type="button" aria-label="Enlarge photo"><img class="photo" src="/before-after.webp" width="1024" height="572" loading="lazy" decoding="async" alt="A split-screen comparison showing a large amount of furniture and household items scattered outside a house (Before - Stage 1) versus the same items neatly and efficiently packed floor-to-ceiling inside a storage unit (After - Stage 2)."></button></div>
 
+<section class="band band-ice">
 <h2 id="questions">Questions</h2>
 <div class="answers">
 <h3>Where do you haul?</h3>
@@ -81,6 +82,7 @@ nav:
 <h3>What do you take?</h3>
 <p class="closer">Furniture, yard cleanup, small demo, and apartment, garage, and estate cleanouts. Ask if you are not sure. See <a href="/what-we-dont-take/">what we can't take</a>.</p>
 </div>
+</section>
 
 <h2 id="additional-services">Additional Services</h2>
 <ul class="partners">
