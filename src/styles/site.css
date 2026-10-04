@@ -501,6 +501,50 @@ footer p:last-child {
 }
 
 .dock {
+	position: fixed;
+	z-index: 2;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	gap: 0.75rem;
+	border-top: 2px solid var(--color-accent);
+	padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
+	background: var(--color-bg);
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s, visibility 0.3s;
+}
+
+.dock.on {
+	opacity: 1;
+	visibility: visible;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.dock {
+		transition: none;
+	}
+}
+
+.dock .go {
+	flex: 1 1 0;
+	text-align: center;
+}
+
+.dock .go {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.4rem;
+}
+
+.dock svg {
+	width: 1.1em;
+	height: 1.1em;
+}
+
+.dock .num {
 	display: none;
 }
 
@@ -601,39 +645,21 @@ footer p:last-child {
 	.menu-drop .bursts {
 		margin-bottom: 1rem;
 	}
-
-	.dock:not([hidden]) {
-		position: fixed;
-		z-index: 2;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		display: flex;
-		gap: 0.75rem;
-		border-top: 2px solid var(--color-accent);
-		padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
-		background: var(--color-bg);
-	}
-
-	.dock .go {
-		flex: 1 1 0;
-		text-align: center;
-	}
-
-	.dock .go {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 0.4rem;
-	}
-
-	.dock svg {
-		width: 1.1em;
-		height: 1.1em;
-	}
 }
 
 @media (min-width: 40rem) {
+	.dock {
+		justify-content: center;
+	}
+
+	.dock .go {
+		flex: 0 1 18rem;
+	}
+
+	.dock .num {
+		display: inline;
+	}
+
 	.served-break {
 		display: block;
 	}

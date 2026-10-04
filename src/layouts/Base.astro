@@ -61,6 +61,7 @@ const pro = servicesIn('pro', here);
 const info = servicesIn('info', here);
 const image = new URL('truck.jpg', site).href;
 const tel = frontmatter.phoneTel.replace(/^tel:/, '');
+const number = frontmatter.callLink.replace(/^Call /, '');
 const cityNames = areas.map((area) => area.name);
 const areaServed = [
 	...(frontmatter.primaryArea
@@ -154,7 +155,9 @@ const jsonLd = { '@context': 'https://schema.org', '@graph': jsonLdGraph };
 		<meta property="og:image:height" content="468" />
 		<meta property="og:image:alt" content="Come Get This Junk truck, 747-319-6969" />
 		<meta name="robots" content="max-image-preview:large" />
-		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="icon" href="/favicon.ico" sizes="48x48" />
+		<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={frontmatter.title} />
 		<meta name="twitter:description" content={frontmatter.description} />
@@ -348,13 +351,13 @@ const jsonLd = { '@context': 'https://schema.org', '@graph': jsonLdGraph };
 			<button class="lightbox-close" type="button" aria-label="Close">×</button>
 			<img alt="" />
 		</dialog>
-		<div class="dock" hidden>
+		<div class="dock">
 			<a class="go" href={frontmatter.phoneSms}>
-				Text
+				Text<span class="num">&nbsp;{number}</span>
 				<svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M448,0H64C28.6,0,0,28.6,0,64v256c0,35.4,28.6,64,64,64h128l-42.7,128l192-128H448c35.4,0,64-28.6,64-64V64C512,28.6,483.4,0,448,0z M128,234.7c-23.6,0-42.7-19.1-42.7-42.7s19.1-42.7,42.7-42.7s42.7,19.1,42.7,42.7S151.6,234.7,128,234.7z M256,234.7c-23.6,0-42.7-19.1-42.7-42.7s19.1-42.7,42.7-42.7s42.7,19.1,42.7,42.7S279.6,234.7,256,234.7z M384,234.7c-23.6,0-42.7-19.1-42.7-42.7s19.1-42.7,42.7-42.7s42.7,19.1,42.7,42.7S407.6,234.7,384,234.7z" /></svg>
 			</a>
 			<a class="go go-line" href={frontmatter.phoneTel}>
-				Call
+				Call<span class="num">&nbsp;{number}</span>
 				<svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path transform="translate(-164 -7159)" d="M183.9954,7161.01 C183.9954,7159.906 183.0974,7159.008 181.9934,7159.008 C181.2144,7159.003 182.0424,7159.006 176.9844,7159 C176.4324,7159 175.9744,7159.439 175.9754,7159.991 C175.9754,7160.543 176.4044,7160.973 176.9564,7160.973 L179.3584,7160.997 C179.8044,7160.997 180.0144,7161.523 179.6994,7161.838 L176.0684,7165.469 C175.6784,7165.86 175.6784,7166.493 176.0684,7166.883 C176.4594,7167.274 177.0924,7167.274 177.4834,7166.883 L181.1154,7163.251 C181.4304,7162.936 181.9814,7163.172 181.9814,7163.617 L181.9864,7166.003 C181.9864,7166.555 182.4554,7167.024 183.0084,7167.024 C183.5604,7167.024 184.0004,7166.568 184.0004,7166.016 L183.9954,7161.01 Z M178.1164,7174.578 C177.4214,7174.204 176.7184,7173.778 175.9914,7173.481 C174.5874,7172.908 174.6824,7174.602 173.6784,7175.151 C173.0264,7175.508 172.1074,7174.861 171.5384,7174.503 C170.5444,7173.877 169.6634,7173.053 168.9304,7172.1 C168.5564,7171.613 167.7274,7170.697 167.8294,7170.014 C167.9914,7168.93 169.2744,7168.876 168.9074,7167.55 C168.7114,7166.84 168.3604,7166.141 168.0974,7165.457 C167.7444,7164.54 167.6004,7163.953 166.5724,7164.003 C165.8314,7164.039 165.3384,7164.356 164.8824,7164.951 C163.6494,7166.558 163.8354,7168.725 164.6644,7170.488 C165.8374,7172.983 167.8494,7175.335 169.9994,7176.855 C171.4614,7177.889 173.3874,7178.828 175.1574,7178.987 C176.4534,7179.104 178.2664,7178.403 178.7304,7176.996 C178.6974,7177.094 178.6664,7177.189 178.6514,7177.234 C178.6634,7177.199 178.6864,7177.128 178.7304,7176.996 C178.7764,7176.854 178.8004,7176.783 178.8104,7176.751 C178.7974,7176.793 178.7644,7176.891 178.7314,7176.993 C179.1394,7175.752 179.1884,7175.155 178.1164,7174.578 L178.1164,7174.578 Z" /></svg>
 			</a>
 		</div>
@@ -434,9 +437,13 @@ const jsonLd = { '@context': 'https://schema.org', '@graph': jsonLdGraph };
 			const dock = document.querySelector('.dock');
 			const footer = document.querySelector('footer');
 			const mobile = matchMedia('(max-width: 39.99rem)');
+			const headPhones = document.querySelector('.head-phones');
+			const bar = document.querySelector('.wordmark');
 			const sync = () => {
 				const footerOn = footer.getBoundingClientRect().top < innerHeight;
-				dock.hidden = !(scrollY > 40 && !footerOn && mobile.matches);
+				// Desktop: show once the header buttons slide under the sticky logo bar. Mobile has no header buttons.
+				const away = mobile.matches ? scrollY > 40 : headPhones.getBoundingClientRect().bottom < bar.offsetHeight;
+				dock.classList.toggle('on', away && !footerOn);
 			};
 			addEventListener('scroll', sync, { passive: true });
 			addEventListener('resize', sync);
