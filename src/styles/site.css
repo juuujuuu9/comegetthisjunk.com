@@ -282,6 +282,13 @@ footer {
 	mix-blend-mode: multiply;
 }
 
+/* Invert to white lines on black, then screen so the black drops out and the hover blue shows. */
+.posters a:hover img,
+.posters a:focus-visible img {
+	filter: invert(1);
+	mix-blend-mode: screen;
+}
+
 .posters h3,
 .shout,
 .claims {
