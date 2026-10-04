@@ -1,5 +1,6 @@
 ---
 import { alsoHauls, areaLinks, areas } from '../areas';
+import Pitch from '../components/Pitch.astro';
 import { servicesIn } from '../services';
 import '../styles/site.css';
 
@@ -231,42 +232,9 @@ const jsonLd = { '@context': 'https://schema.org', '@graph': jsonLdGraph };
 			<img class="photo" src="/truck.jpg" width="1024" height="468" fetchpriority="high" alt="Come Get This Junk truck, 747-319-6969" />
 			<p class="served" id="area" set:html={servedLine} />
 			{frontmatter.pageH1 && <h1 class="lede">{frontmatter.pageH1}</h1>}
-			{
-				inner && (
-					<>
-						<p class="pitch">
-							<a href={frontmatter.phoneSms}>Text a photo</a> of the pile. We name a price,<br class="served-break" /> then show up the same day or the next. You point, we haul.
-						</p>
-						<ul class="posters">
-							<li>
-								<a href={frontmatter.phoneSms}>
-									<h3>Got a pile?</h3>
-									<p>Text a pic to 747-319-6969</p>
-								</a>
-							</li>
-							<li>
-								<a href="/#how-it-works">
-									<h3>Your price</h3>
-									<p>We tell you everything up front</p>
-								</a>
-							</li>
-							<li>
-								<a href="#area">
-									<h3>The San Fernando Valley</h3>
-									<p>We drive out</p>
-								</a>
-							</li>
-							<li>
-								<a href="/#odd-jobs">
-									<h3>Odd jobs</h3>
-									<p>Just ask</p>
-								</a>
-							</li>
-						</ul>
-					</>
-				)
-			}
+			{inner && frontmatter.primaryArea && <Pitch sms={frontmatter.phoneSms} />}
 			<slot />
+			{inner && !frontmatter.primaryArea && <Pitch sms={frontmatter.phoneSms} hook />}
 			{
 				inner && frontmatter.faq?.length > 0 && (
 					<>

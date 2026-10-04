@@ -1,0 +1,44 @@
+---
+const { sms, hook } = Astro.props;
+// Static fallback is the first line; the script below swaps in a random one so the page still reads right without JS.
+const hooks = ["Got junk? We'll haul it.", "Pile in the way? We'll take it.", 'Tired of looking at it? Send a pic.', 'You point. We haul.'];
+---
+
+{hook && <h2 class="lede" data-hooks={JSON.stringify(hooks)}>{hooks[0]}</h2>}
+<p class="pitch">
+	<a href={sms}>Text a photo</a> of the pile. We name a price,<br class="served-break" /> then show up the same day or the next. You point, we haul.
+</p>
+<ul class="posters">
+	<li>
+		<a href={sms}>
+			<h3>Got a pile?</h3>
+			<p>Text a pic to 747-319-6969</p>
+		</a>
+	</li>
+	<li>
+		<a href="/#how-it-works">
+			<h3>Your price</h3>
+			<p>We tell you everything up front</p>
+		</a>
+	</li>
+	<li>
+		<a href="#area">
+			<h3>The San Fernando Valley</h3>
+			<p>We drive out</p>
+		</a>
+	</li>
+	<li>
+		<a href="/#odd-jobs">
+			<h3>Odd jobs</h3>
+			<p>Just ask</p>
+		</a>
+	</li>
+</ul>
+
+<script>
+	const el = document.querySelector<HTMLElement>('[data-hooks]');
+	if (el) {
+		const hooks: string[] = JSON.parse(el.dataset.hooks!);
+		el.textContent = hooks[Math.floor(Math.random() * hooks.length)];
+	}
+</script>
