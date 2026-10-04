@@ -235,9 +235,8 @@ const jsonLd = { '@context': 'https://schema.org', '@graph': jsonLdGraph };
 			<img class="photo" src="/truck.webp" width="1024" height="468" fetchpriority="high" alt="Come Get This Junk truck, 747-319-6969" />
 			<p class="served" id="area" set:html={servedLine} />
 			{frontmatter.pageH1 && <h1 class="lede">{frontmatter.pageH1}</h1>}
-			{inner && frontmatter.primaryArea && <Pitch sms={frontmatter.phoneSms} />}
 			<slot />
-			{inner && !frontmatter.primaryArea && <Pitch sms={frontmatter.phoneSms} hook />}
+			{inner && <Pitch sms={frontmatter.phoneSms} hook={!frontmatter.primaryArea} />}
 			{
 				inner && frontmatter.faq?.length > 0 && (
 					<>

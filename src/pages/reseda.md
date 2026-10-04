@@ -26,8 +26,10 @@ nav:
     href: sms:+17473196969
 ---
 
-<p class="closer">Reseda runs on long, flat grid blocks of postwar single-story houses and stucco apartment courts, cut by Sherman Way, Vanowen, and Reseda Boulevard. Driveways are short and garages sit at the back of the lot, so the truck either backs in tight or loads from the alley. When the Santa Ana winds blow, half the yards end up with palm fronds and fallen limbs.</p>
+<p class="closer">Junk removal in Reseda, for single-story houses and apartment courts around Sherman Way, Vanowen, and Reseda Boulevard. Text a photo, get a price up front, and we haul it away same day or next day in most cases.</p>
 
-<p class="closer">The calls we get here: a one-car garage packed floor to ceiling, a landlord turning a unit before the first of the month, a couch and mattress that need to go sooner than the city's bulky-item pickup can schedule, a backyard with a dead lemon tree and a stack of old fence boards. Send one photo of the whole pile and we price it together.</p>
+<p class="closer"><strong>Popular Reseda jobs:</strong> packed garages, landlord unit turnovers, couch and mattress removal when you can't wait for the city's bulky-item pickup, and yard cleanup like palm fronds, dead trees, and old fence boards.</p>
+
+<p class="closer">Short driveway or a garage at the back of the lot? Tell us, and we'll load from the alley if that's easier. Send one photo of the whole pile and we price it as a single job.</p>
 
 <p class="actions"><a class="go" href="sms:+17473196969">Text 747-319-6969</a> <a class="go go-line" href="tel:+17473196969">Call 747-319-6969</a></p>

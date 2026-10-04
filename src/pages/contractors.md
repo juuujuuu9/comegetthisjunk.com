@@ -14,7 +14,7 @@ faq:
   - question: "Do you take on remodeling or ADU work?"
     answer: "Yes. Remodeling, construction, and ADUs are among our additional services. Just ask."
 ---
-<p class="closer">We are fully licensed. We haul the debris from remodels, small demo, and ADU site work so your crew stays on the job: cabinets and countertops, fixtures, old appliances, fencing, patio covers, and the pile in the driveway.</p>
-<p class="closer">Text a photo of the debris and the access. Stairs, gates, and a tight driveway set the work, and weight sets the price. Heavy debris like concrete, dirt, and roofing needs a question first, so text and ask. Asbestos and lead material are on <a href="/what-we-dont-take/">the list we can't take</a>.</p>
-<p class="closer">Invoicing, repeat scheduling, and evening or weekend slots are available by request. A kitchen remodel in <a href="/encino/">Encino</a> or <a href="/tarzana/">Tarzana</a> puts the cabinets and the appliances out on the same day, and one trip handles both.</p>
+<p class="closer">Keep your crew on the job. We're fully licensed and haul debris from remodels, small demo, and ADU site work: cabinets and countertops, fixtures, old appliances, fencing, patio covers, and whatever is piled in the driveway.</p>
+<p class="closer">Text a photo of the debris and the access. Stairs, gates, and tight driveways affect the work, and weight affects the price. Heavy debris like concrete, dirt, and roofing costs more to haul, so text and ask first. Asbestos and lead material are on <a href="/what-we-dont-take/">the list we can't take</a>.</p>
+<p class="closer">Invoicing, repeat scheduling, and evening or weekend slots are available by request. On a kitchen remodel in <a href="/encino/">Encino</a> or <a href="/tarzana/">Tarzana</a>, we can take the cabinets and old appliances in one trip.</p>
 <p class="closer">We also take on remodeling, construction, and ADU work. See the <a href="/#additional-services">additional services</a> on the home page, or just ask. For pricing, see <a href="/junk-removal-cost/">how junk removal is priced</a>.</p>

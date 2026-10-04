@@ -14,7 +14,7 @@ faq:
   - question: "Can you take a shed or patio cover?"
     answer: "Yes. Sheds and patio covers are small demo."
 ---
-<p class="closer">We handle small demo in the yard: wood fence sections, patio covers, decks, sheds, patio furniture, and pool equipment such as pumps, filters, heaters, and covers. We tear it out and haul it in one visit.</p>
-<p class="closer">Text a photo of what comes out and say where it stops. A fence line has two ends, and the photo should show both. After a Santa Ana wind in <a href="/reseda/">Reseda</a>, a fallen fence and a stack of boards is a common call. In <a href="/tarzana/">Tarzana</a> and <a href="/encino/">Encino</a>, the work is a shed or pool house behind the main house, far from the street.</p>
-<p class="closer">Concrete, pavers, dirt, and block are heavy debris. Text us and ask before you count on a number. See <a href="/junk-removal-cost/">how junk removal is priced</a>, and the short list of <a href="/what-we-dont-take/">items we can't take</a>.</p>
+<p class="closer">We tear out and haul away small yard demo in one visit: wood fence sections, patio covers, decks, sheds, patio furniture, and pool equipment like pumps, filters, heaters, and covers.</p>
+<p class="closer">To get a price, text a photo of what's coming out and tell us where the removal starts and stops. For a fence, show the full section. Fallen fences and boards after a wind storm are a common call in <a href="/reseda/">Reseda</a>. In <a href="/tarzana/">Tarzana</a> and <a href="/encino/">Encino</a>, sheds and pool houses often sit far from the street, so include the path in your photo.</p>
+<p class="closer">Concrete, pavers, dirt, and block are heavy debris and cost more to haul, so text us what you have before you count on a number. See <a href="/junk-removal-cost/">how junk removal is priced</a> and the short list of <a href="/what-we-dont-take/">items we can't take</a>.</p>
 <p class="closer">A spa on the patio comes out in the same visit. See <a href="/hot-tub-removal/">hot tub removal</a>.</p>

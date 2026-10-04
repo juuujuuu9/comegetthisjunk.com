@@ -14,7 +14,7 @@ faq:
   - question: "How soon can you come?"
     answer: "Same day or next day in most cases."
 ---
-<p class="closer">A storage unit is rent for things you don't use. We empty it so you can stop paying for it. Text the facility name, the unit number, and the unit size, with a photo of the unit with its door open.</p>
-<p class="closer">Tell us how we get in. We go through gates as needed, so send the gate code with the unit number. Facilities tend to cluster along the main boulevards in <a href="/woodland-hills/">Woodland Hills</a>, <a href="/reseda/">Reseda</a>, and <a href="/sherman-oaks/">Sherman Oaks</a>, and the truck can park at the unit door.</p>
-<p class="closer">We sort as we load. Metal goes to recycling, anything of value gets set aside for you, usable items go to donation, and the rest gets proper disposal. Boxes of papers and old photos are the part to check first, so tell us what to hold back.</p>
+<p class="closer">Stop paying rent on things you don't use. We empty your storage unit and haul everything away. To get a price, text the facility name, unit number, and unit size, with a photo of the unit with the door open.</p>
+<p class="closer">Send the gate code along with the unit number and we'll take care of access. We serve storage facilities in <a href="/woodland-hills/">Woodland Hills</a>, <a href="/reseda/">Reseda</a>, <a href="/sherman-oaks/">Sherman Oaks</a>, and across the Valley.</p>
+<p class="closer">We sort as we load: valuables are set aside for you, metal is recycled, usable items are donated, and the rest is disposed of properly. Tell us if there are boxes of papers or photos you want held back.</p>
 <p class="closer">Cleaning out a parent's unit as part of an estate? See <a href="/estate-cleanout/">estate cleanout</a>. For pricing, see <a href="/junk-removal-cost/">how junk removal is priced</a>.</p>

@@ -4,28 +4,28 @@ const { sms, hook } = Astro.props;
 const hooks = ["Got junk? We'll haul it.", "Pile in the way? We'll take it.", 'Tired of looking at it? Send a pic.', 'You point. We haul.'];
 ---
 
-{hook && <h2 class="lede" data-hooks={JSON.stringify(hooks)}>{hooks[0]}</h2>}
-<p class="pitch">
+{hook && <h2 class="lede section" data-hooks={JSON.stringify(hooks)}>{hooks[0]}</h2>}
+<p class={hook ? 'pitch' : 'pitch section'}>
 	<a href={sms}>Text a photo</a> of the pile. We name a price,<br class="served-break" /> then show up the same day or the next. You point, we haul.
 </p>
 <ul class="posters">
 	<li>
 		<a href={sms}>
 			<img src="/pile.webp" width="782" height="559" alt="" loading="lazy" decoding="async" />
-			<h3>Got a pile?</h3>
+			<h3>Got a pile of junk?</h3>
 			<p>Text a pic to 747-319-6969</p>
 		</a>
 	</li>
 	<li>
 		<a href="/#how-it-works">
 			<img src="/price.webp" width="736" height="525" alt="" loading="lazy" decoding="async" />
-			<h3>Your price</h3>
+			<h3>Get your price<br class="mobile-break" /> on the spot</h3>
 			<p>We tell you everything up front</p>
 		</a>
 	</li>
 	<li>
 		<a href="#area">
-			<h3>The San Fernando Valley</h3>
+			<h3>Proudly serving<br />the San Fernando Valley</h3>
 			<p>We drive out</p>
 		</a>
 	</li>

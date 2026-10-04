@@ -5,7 +5,10 @@
 	--font-display: Tanker, Impact, sans-serif;
 	--font-body: Switzer, Helvetica, sans-serif;
 	--measure: 72rem;
+	/* Vertical rhythm: gap = inside one topic, stack = between blocks, section = between topics. */
+	--gap: 1.25rem;
 	--stack: 2.5rem;
+	--section: 3.75rem;
 }
 
 html {
@@ -36,7 +39,7 @@ body {
 h1,
 h2,
 h3 {
-	margin: var(--stack) 0;
+	margin: var(--stack) 0 var(--gap);
 	font-family: var(--font-display);
 	font-style: normal;
 	/* Tanker ships one weight and is already display-heavy; 700 would synthesise. */
@@ -190,7 +193,7 @@ nav {
 }
 
 h1.lede {
-	margin: var(--stack) 0;
+	margin: var(--stack) 0 var(--gap);
 	font-size: 2.8125rem;
 }
 
@@ -224,12 +227,31 @@ footer {
 	margin-right: auto;
 }
 
+/* Consecutive text and its buttons read as one topic. */
+.closer:has(+ .closer),
+.closer:has(+ .actions) {
+	margin-bottom: var(--gap);
+}
+
+.pitch {
+	margin-bottom: var(--gap);
+}
+
 .answers {
+	margin-bottom: var(--stack);
 	text-align: center;
 }
 
+.answers .closer {
+	margin-bottom: 0;
+}
+
 .answers h3 {
-	margin-bottom: 0.4rem;
+	margin: 1.75rem 0 0.4rem;
+}
+
+.answers h3:first-child {
+	margin-top: 0;
 }
 
 .partners {
@@ -307,7 +329,7 @@ footer {
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: var(--stack);
-	margin-bottom: var(--stack);
+	margin: var(--section) 0 var(--stack);
 }
 
 .ticket {
@@ -321,11 +343,20 @@ footer {
 	text-align: center;
 }
 
+/* Every new topic starts after the same large break. */
+.section,
 main > .promise h2,
 #odd-jobs,
 #questions,
+#what-we-haul,
+#for-pros,
 #additional-services {
-	margin-top: calc(var(--stack) + 2rem);
+	margin-top: var(--section);
+}
+
+.promise p:has(+ .claims),
+.promise .claims {
+	margin-bottom: var(--gap);
 }
 
 .ticket ol {
@@ -514,6 +545,10 @@ footer {
 	padding: var(--stack) 0;
 }
 
+footer .wrap > * {
+	margin-bottom: var(--gap);
+}
+
 footer p:last-child {
 	margin-bottom: 0;
 }
@@ -666,6 +701,10 @@ footer p:last-child {
 }
 
 @media (min-width: 40rem) {
+	:root {
+		--section: 5rem;
+	}
+
 	.dock {
 		justify-content: center;
 	}
@@ -680,6 +719,10 @@ footer p:last-child {
 
 	.served-break {
 		display: block;
+	}
+
+	.mobile-break {
+		display: none;
 	}
 
 	.head-phones {

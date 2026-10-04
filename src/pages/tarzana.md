@@ -26,8 +26,10 @@ nav:
     href: sms:+17473196969
 ---
 
-<p class="closer">North of Ventura, Tarzana is ranch houses on big lots: detached garages, backyard sheds, a pool house nobody has opened since the kids moved out. South of the boulevard the streets climb toward Mulholland, the driveways steepen, and the gate code comes by text before we pull in. Along Ventura and Reseda Boulevard it's apartments, where the elevator and the move-out date set the schedule.</p>
+<p class="closer">Junk removal in Tarzana, from ranch houses on large lots north of Ventura to hillside homes toward Mulholland and apartments along Ventura and Reseda Boulevard. Text a photo, get a price up front, and we haul it away same day or next day in most cases.</p>
 
-<p class="closer">The calls repeat: a two-car garage that stopped fitting cars, patio furniture and a dead hot tub after a remodel, a yard of branches after a Santa Ana wind, the load an estate sale left behind. The big lots mean a long carry from the back, so a photo of the route helps.</p>
+<p class="closer"><strong>Popular Tarzana jobs:</strong> garage cleanouts, patio furniture and hot tub removal after a remodel, yard debris after a wind storm, and estate sale leftovers.</p>
+
+<p class="closer"><strong>Big lots:</strong> detached garages, sheds, and pool houses mean a long carry to the truck, so include the route in your photo. <strong>Apartments:</strong> tell us your move-out date and elevator hours. <strong>Hillside and gated homes:</strong> send the gate code and mention steep driveways.</p>
 
 <p class="actions"><a class="go" href="sms:+17473196969">Text 747-319-6969</a> <a class="go go-line" href="tel:+17473196969">Call 747-319-6969</a></p>

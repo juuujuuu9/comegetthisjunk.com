@@ -12,6 +12,6 @@ faq:
   - question: "What do you do with valuables?"
     answer: "We set them aside for the family."
 ---
-<p class="closer">Send us the address and a contact. We text the contact for photos of the rooms, name a price up front, and clear the house. Same day or next day in most cases, and we go through gates as needed.</p>
-<p class="closer">We sort as we go. Metal goes to recycling, anything of value gets set aside for the family, usable items go to donation, and the rest gets proper disposal. Tell us what the family wants kept.</p>
+<p class="closer">One call, one point of contact for your client. Send us the address and a contact. We text them for photos of the rooms, give a price up front, and clear the house. Same day or next day in most cases, and we handle gated properties.</p>
+<p class="closer">We sort as we go: valuables are set aside for the family, metal is recycled, usable items are donated, and the rest is disposed of properly. Tell us what the family wants kept.</p>
 <p class="closer">Invoicing and scheduling around a closing date are available by request. The family-facing page is <a href="/estate-cleanout/">estate cleanout</a>. For pricing, see <a href="/junk-removal-cost/">how junk removal is priced</a>.</p>

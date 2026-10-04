@@ -14,7 +14,7 @@ faq:
   - question: "What do you take from an apartment?"
     answer: "Furniture, mattresses, appliances, boxes, and leftovers. See the short list of items we can't take."
 ---
-<p class="closer">Move-outs run on a date. The unit has to be empty by Sunday, or before the first of the month. We work to that date. Tell us the deadline when you text and send a photo of each room.</p>
-<p class="closer">We take what is left: furniture, mattresses, appliances, boxes, and the junk from the closet and balcony. Apartment buildings in <a href="/reseda/">Reseda</a>, <a href="/sherman-oaks/">Sherman Oaks</a>, <a href="/encino/">Encino</a>, and <a href="/woodland-hills/">Woodland Hills</a> often have elevator hours and a loading window. Tell us the window and the haul fits inside it.</p>
-<p class="closer">We sort each load. Metal goes to recycling, valuables get set aside, usable items go to donation, and the rest gets proper disposal. You point, we haul.</p>
+<p class="closer">Moving out on a deadline? We'll get the unit empty in time. Text your deadline and a photo of each room, and we'll give you a price and a time.</p>
+<p class="closer">We haul away whatever's left: furniture, mattresses, appliances, boxes, and the clutter from closets and balconies. Many apartment buildings in <a href="/reseda/">Reseda</a>, <a href="/sherman-oaks/">Sherman Oaks</a>, <a href="/encino/">Encino</a>, and <a href="/woodland-hills/">Woodland Hills</a> restrict elevator use and loading times. Send us the window and we schedule inside it.</p>
+<p class="closer">Valuables are set aside, metal is recycled, usable items are donated, and the rest is disposed of properly. You point, we haul.</p>
 <p class="closer">Landlords and managers with several units can set up repeat service. See <a href="/property-managers/">junk removal for property managers</a>. For pricing, see <a href="/junk-removal-cost/">how junk removal is priced</a>.</p>

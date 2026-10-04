@@ -26,8 +26,10 @@ nav:
     href: sms:+17473196969
 ---
 
-<p class="closer">Woodland Hills is two different jobs depending on the block. Up toward Mulholland, the driveway slopes, the stairs are steep, and the gate code comes by text before we buzz in. Down in Warner Center, parking is tight and the building enforces a loading dock window, so the haul has to fit the slot you were given. In between, along Ventura Boulevard and Canoga Avenue, it's older ranch houses with full garages.</p>
+<p class="closer">Junk removal in Woodland Hills, from hillside homes near Mulholland to condos in Warner Center and ranch houses along Ventura Boulevard and Canoga Avenue. Text a photo, get a price up front, and we haul it away same day or next day in most cases.</p>
 
-<p class="closer">Most of what we clear here: a garage off Topanga Canyon Boulevard that's been sealed shut since the last owner, a Warner Center condo turning over on a weekend deadline, a hillside house clearing out furniture before it goes on the market.</p>
+<p class="closer"><strong>Popular Woodland Hills jobs:</strong> garage cleanouts, condo move-outs on a deadline, and furniture removal before a house goes on the market.</p>
+
+<p class="closer"><strong>Warner Center buildings:</strong> send us the loading dock window and we schedule inside it. <strong>Hillside homes:</strong> tell us about steep driveways, stairs, and gates when you text, and send the gate code ahead of time.</p>
 
 <p class="actions"><a class="go" href="sms:+17473196969">Text 747-319-6969</a> <a class="go go-line" href="tel:+17473196969">Call 747-319-6969</a></p>

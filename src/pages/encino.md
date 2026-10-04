@@ -26,8 +26,10 @@ nav:
     href: sms:+17473196969
 ---
 
-<p class="closer">Encino is two jobs split by Ventura Boulevard. North of it, around Balboa and Hayvenhurst, it's condos and townhomes where the property manager sets the elevator hours and the loading window, and the haul has to fit inside it. South of it, the lots get big, the streets climb into Encino Hills, and the gate code comes by text before we pull in. Pool houses, guest units, and side-yard sheds sit behind the main house, so the walk from the door to the truck can be long.</p>
+<p class="closer">Junk removal in Encino, from condos and townhomes near Balboa and Hayvenhurst to large lots and hillside homes in Encino Hills. Text a photo, get a price up front, and we haul it away same day or next day in most cases.</p>
 
-<p class="closer">What we clear here: cabinets and countertops from a kitchen remodel, a dead spa and a rusted patio set, a garage nobody has opened in years, and the leftovers after an estate sale once the buyers have taken what they want. Include the path to the pile in your photo. Stairs and gates change the price more than the amount of junk does.</p>
+<p class="closer"><strong>Popular Encino jobs:</strong> kitchen remodel cabinets and countertops, old spas and patio furniture, garage cleanouts, and estate sale leftovers.</p>
+
+<p class="closer"><strong>Condos and townhomes:</strong> send us your building's elevator hours and loading window and we schedule the haul inside it. <strong>Gated and hillside properties:</strong> text the gate code, and show the path from the door to the pile in your photo. Stairs and long carries from a pool house, guest unit, or shed affect the price, so the more we see up front, the more accurate the quote.</p>
 
 <p class="actions"><a class="go" href="sms:+17473196969">Text 747-319-6969</a> <a class="go go-line" href="tel:+17473196969">Call 747-319-6969</a></p>
