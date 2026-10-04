@@ -272,6 +272,10 @@ footer {
 }
 
 /* The drawings are opaque white PNGs; multiply keeps the lines and lets the hover blue show through. */
+.posters a:has(img) {
+	padding-top: 0.75rem;
+}
+
 .posters img {
 	width: 100%;
 	height: auto;
