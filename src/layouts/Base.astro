@@ -1,5 +1,6 @@
 ---
 import { alsoHauls, areaLinks, areas } from '../areas';
+import { servicesIn } from '../services';
 import '../styles/site.css';
 
 interface NavItem {
@@ -23,17 +24,41 @@ interface Chrome {
 	textLink: string;
 	pageH1?: string;
 	primaryArea?: string;
+	service?: string;
 	faq?: FaqItem[];
 	signoff: string;
 	nav: NavItem[];
 }
 
-const { frontmatter } = Astro.props as { frontmatter: Chrome };
+// Shared chrome. A page only needs title, description and pageH1 (plus primaryArea for a city page, service for a service page); any field can still be overridden in frontmatter.
+const defaults: Omit<Chrome, 'title' | 'description'> = {
+	publicName: 'Come Get This Junk',
+	legalName: 'Julian Hardee Services',
+	phoneTel: 'tel:+17473196969',
+	phoneSms: 'sms:+17473196969',
+	callLink: 'Call 747-319-6969',
+	textLink: 'Text 747-319-6969',
+	signoff: 'You point, we haul.',
+	nav: [
+		{ label: 'Haul it', href: '/#services' },
+		{ label: 'The price', href: '/#how-it-works' },
+		{ label: 'Areas served', href: '/#area' },
+		{ label: 'Odd jobs', href: '/#odd-jobs' },
+		{ label: 'The crew', href: '#service-promise' },
+		{ label: 'Text us', href: 'sms:+17473196969' },
+	],
+};
+const frontmatter = { ...defaults, ...(Astro.props.frontmatter as Partial<Chrome>) } as Chrome;
+const inner = Boolean(frontmatter.pageH1);
 const origin = 'https://comegetthisjunk.com';
 const site = `${origin}/`;
 const path = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
 const canonical = new URL(path, origin).href;
-const image = new URL('wordmark.png', site).href;
+const here = path.slice(1, -1);
+const haul = servicesIn('haul', here);
+const pro = servicesIn('pro', here);
+const info = servicesIn('info', here);
+const image = new URL('truck.jpg', site).href;
 const tel = frontmatter.phoneTel.replace(/^tel:/, '');
 const cityNames = areas.map((area) => area.name);
 const areaServed = [
@@ -64,9 +89,36 @@ const webPage = {
 	isPartOf: { '@id': `${site}#business` },
 	about: { '@id': `${site}#business` },
 };
+const serviceName = frontmatter.service ?? 'Junk removal';
+const service = {
+	'@type': 'Service',
+	'@id': frontmatter.service ? `${canonical}#service` : `${site}#service`,
+	name: serviceName,
+	serviceType: serviceName,
+	provider: { '@id': `${site}#business` },
+	areaServed,
+	...(frontmatter.service ? {} : { hasOfferCatalog: {
+		'@type': 'OfferCatalog',
+		name: 'Junk removal services',
+		itemListElement: servicesIn('haul').map(({ name, slug }) => ({
+			'@type': 'Offer',
+			itemOffered: { '@type': 'Service', name, url: `${origin}/${slug}/` },
+		})),
+	} }),
+};
+const breadcrumb = {
+	'@type': 'BreadcrumbList',
+	'@id': `${canonical}#breadcrumb`,
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: frontmatter.publicName, item: site },
+		{ '@type': 'ListItem', position: 2, name: frontmatter.pageH1, item: canonical },
+	],
+};
 const jsonLdGraph = [
 	localBusiness,
+	service,
 	webPage,
+	...(inner ? [breadcrumb] : []),
 	...(frontmatter.faq?.length
 		? [
 				{
@@ -97,12 +149,19 @@ const jsonLd = { '@context': 'https://schema.org', '@graph': jsonLdGraph };
 		<meta property="og:description" content={frontmatter.description} />
 		<meta property="og:url" content={canonical} />
 		<meta property="og:image" content={image} />
-		<meta name="twitter:card" content="summary" />
+		<meta property="og:image:width" content="1024" />
+		<meta property="og:image:height" content="468" />
+		<meta property="og:image:alt" content="Come Get This Junk truck, 747-319-6969" />
+		<meta name="robots" content="max-image-preview:large" />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={frontmatter.title} />
 		<meta name="twitter:description" content={frontmatter.description} />
 		<meta name="twitter:image" content={image} />
 		<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 		{/* Fontshare only honours the first `f[]`; indexed keys must be encoded to get both families. */}
+		<link rel="preconnect" href="https://api.fontshare.com" />
+		<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
 		<link
 			rel="stylesheet"
 			href="https://api.fontshare.com/v2/css?f%5B0%5D=tanker@400&f%5B1%5D=switzer@400,700,400i,700i&display=swap"
@@ -124,7 +183,7 @@ const jsonLd = { '@context': 'https://schema.org', '@graph': jsonLdGraph };
 					) : (
 						<h1>
 							<a href="#top">
-								<img src="/wordmark.png" alt={frontmatter.publicName} />
+								<img src="/wordmark.png" alt={`${frontmatter.publicName}, junk removal in the San Fernando Valley`} />
 							</a>
 						</h1>
 					)
@@ -169,11 +228,11 @@ const jsonLd = { '@context': 'https://schema.org', '@graph': jsonLdGraph };
 			</div>
 		</header>
 		<main id="top" class="wrap">
-			<img class="photo" src="/truck.jpg" width="1024" height="468" alt="Come Get This Junk truck, 747-319-6969" />
+			<img class="photo" src="/truck.jpg" width="1024" height="468" fetchpriority="high" alt="Come Get This Junk truck, 747-319-6969" />
 			<p class="served" id="area" set:html={servedLine} />
 			{frontmatter.pageH1 && <h1 class="lede">{frontmatter.pageH1}</h1>}
 			{
-				frontmatter.primaryArea && (
+				inner && (
 					<>
 						<p class="pitch">
 							<a href={frontmatter.phoneSms}>Text a photo</a> of the pile. We name a price,<br class="served-break" /> then show up the same day or the next. You point, we haul.
@@ -209,7 +268,52 @@ const jsonLd = { '@context': 'https://schema.org', '@graph': jsonLdGraph };
 			}
 			<slot />
 			{
-				frontmatter.primaryArea && (
+				inner && frontmatter.faq?.length > 0 && (
+					<>
+						<h2 id="questions">Questions</h2>
+						<div class="answers">
+							{frontmatter.faq.map(({ question, answer }) => (
+								<>
+									<h3>{question}</h3>
+									<p class="closer">{answer}</p>
+								</>
+							))}
+						</div>
+					</>
+				)
+			}
+			{
+				(haul.length > 0 || pro.length > 0) && (
+					<>
+						{haul.length > 0 && (
+							<>
+								<h2 id="what-we-haul">{frontmatter.primaryArea ? `What we haul in ${frontmatter.primaryArea}` : 'What we haul'}</h2>
+								<ul class="partners">
+									{haul.map((item) => (
+										<li>
+											<a href={`/${item.slug}/`}>{frontmatter.primaryArea ? `${item.name} in ${frontmatter.primaryArea}` : item.name}</a>
+										</li>
+									))}
+								</ul>
+							</>
+						)}
+						{pro.length > 0 && (
+							<>
+								<h2 id="for-pros">For pros</h2>
+								<ul class="partners">
+									{pro.map((item) => (
+										<li>
+											<a href={`/${item.slug}/`}>{item.name}</a>
+										</li>
+									))}
+								</ul>
+							</>
+						)}
+					</>
+				)
+			}
+			{
+				inner && (
 					<>
 						<article class="promise" id="service-promise">
 							<h2 class="shout">We show up</h2>
@@ -224,7 +328,7 @@ const jsonLd = { '@context': 'https://schema.org', '@graph': jsonLdGraph };
 								<a class="go go-line" href={frontmatter.phoneTel}>{frontmatter.callLink}</a>
 							</p>
 						</article>
-						<p class="closer" set:html={alsoHauls(frontmatter.primaryArea)} />
+						{frontmatter.primaryArea && <p class="closer" set:html={alsoHauls(frontmatter.primaryArea)} />}
 					</>
 				)
 			}
@@ -258,6 +362,17 @@ const jsonLd = { '@context': 'https://schema.org', '@graph': jsonLdGraph };
 						))
 					}
 				</ul>
+				{
+					haul.length + pro.length + info.length > 0 && (
+						<ul class="footer-nav footer-areas footer-services">
+							{[...haul, ...pro, ...info].map((item) => (
+								<li>
+									<a href={`/${item.slug}/`}>{item.name}</a>
+								</li>
+							))}
+						</ul>
+					)
+				}
 				<p class="legal">{frontmatter.legalName}</p>
 			</div>
 		</footer>

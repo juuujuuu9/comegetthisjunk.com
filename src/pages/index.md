@@ -13,11 +13,11 @@ faq:
   - question: Where do you haul?
     answer: Woodland Hills, Tarzana, Reseda, Encino, Sherman Oaks, and the San Fernando Valley around them. Text or call 747-319-6969.
   - question: How do you price it?
-    answer: Text a photo of the pile. We name a price up front. A photo covers most piles. For a big or complex job, we come look in person the same day and quote you there.
+    answer: Text a photo of the pile. We name a price up front. A photo covers most piles. For a big or complex job, we come look in person the same day and quote you there. See how junk removal is priced.
   - question: How soon can you come?
     answer: Same day or next day in most cases.
   - question: What do you take?
-    answer: Furniture, yard cleanup, small demo, apartment and garage cleanouts, and estate cleanouts. Ask if you are not sure.
+    answer: Furniture, yard cleanup, small demo, and apartment, garage, and estate cleanouts. Ask if you are not sure. See what we can't take.
 nav:
   - label: Haul it
     href: "#services"
@@ -75,11 +75,11 @@ nav:
 <h3>Where do you haul?</h3>
 <p class="closer"><a href="/woodland-hills/">Woodland Hills</a>, <a href="/tarzana/">Tarzana</a>, <a href="/reseda/">Reseda</a>, <a href="/encino/">Encino</a>, <a href="/sherman-oaks/">Sherman Oaks</a>, and the San Fernando Valley around them. <a href="sms:+17473196969">Text</a> or <a href="tel:+17473196969">call 747-319-6969</a>.</p>
 <h3>How do you price it?</h3>
-<p class="closer">Text a photo of the pile. We name a price up front. A photo covers most piles. For a big or complex job, we come look in person the same day and quote you there.</p>
+<p class="closer">Text a photo of the pile. We name a price up front. A photo covers most piles. For a big or complex job, we come look in person the same day and quote you there. See <a href="/junk-removal-cost/">how junk removal is priced</a>.</p>
 <h3>How soon can you come?</h3>
 <p class="closer">Same day or next day in most cases.</p>
 <h3>What do you take?</h3>
-<p class="closer">We also move furniture, clean up a yard, and handle small demo. Apartment, garage, and estate cleanouts are the same call.</p>
+<p class="closer">Furniture, yard cleanup, small demo, and apartment, garage, and estate cleanouts. Ask if you are not sure. See <a href="/what-we-dont-take/">what we can't take</a>.</p>
 </div>
 
 <h2 id="additional-services">Additional Services</h2>
