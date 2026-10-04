@@ -19,7 +19,7 @@ nav:
   - label: Areas served
     href: /#area
   - label: Odd jobs
-    href: /#odd-jobs
+    href: /#what-we-haul
   - label: The crew
     href: "#service-promise"
   - label: Text us
