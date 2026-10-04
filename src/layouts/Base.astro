@@ -172,6 +172,13 @@ const jsonLd = { '@context': 'https://schema.org', '@graph': jsonLdGraph };
 		/>
 		<title>{frontmatter.title}</title>
 		<script is:inline defer src="https://cloud.umami.is/script.js" data-website-id="1e8db0c2-7bed-4cd9-8835-a43688efd78e"></script>
+		<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-769852679"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'AW-769852679');
+		</script>
 	</head>
 	<body>
 		<div class="wordmark">
