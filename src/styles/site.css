@@ -631,7 +631,8 @@ footer p:last-child {
 }
 
 @media (max-width: 39.99rem) {
-	header {
+	header,
+	.footer-nav:not(.footer-areas) {
 		display: none;
 	}
 
