@@ -181,13 +181,13 @@ const jsonLd = { '@context': 'https://schema.org', '@graph': jsonLdGraph };
 					frontmatter.pageH1 ? (
 						<div class="logo">
 							<a href="/">
-								<img src="/wordmark.png" alt={frontmatter.publicName} />
+								<img src="/wordmark.webp" width="1100" height="134" alt={frontmatter.publicName} />
 							</a>
 						</div>
 					) : (
 						<h1>
 							<a href="#top">
-								<img src="/wordmark.png" alt={`${frontmatter.publicName}, junk removal in the San Fernando Valley`} />
+								<img src="/wordmark.webp" width="1100" height="134" alt={`${frontmatter.publicName}, junk removal in the San Fernando Valley`} />
 							</a>
 						</h1>
 					)
@@ -232,7 +232,7 @@ const jsonLd = { '@context': 'https://schema.org', '@graph': jsonLdGraph };
 			</div>
 		</header>
 		<main id="top" class="wrap">
-			<img class="photo" src="/truck.jpg" width="1024" height="468" fetchpriority="high" alt="Come Get This Junk truck, 747-319-6969" />
+			<img class="photo" src="/truck.webp" width="1024" height="468" fetchpriority="high" alt="Come Get This Junk truck, 747-319-6969" />
 			<p class="served" id="area" set:html={servedLine} />
 			{frontmatter.pageH1 && <h1 class="lede">{frontmatter.pageH1}</h1>}
 			{inner && frontmatter.primaryArea && <Pitch sms={frontmatter.phoneSms} />}

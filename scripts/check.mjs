@@ -1,4 +1,4 @@
-// Run after `npm run build`. Fails on broken internal links, duplicate titles/descriptions, bad JSON-LD, or a page without exactly one <h1>.
+// Run after `npm run build`. Fails on broken internal links or image paths, duplicate titles/descriptions, bad JSON-LD, or a page without exactly one <h1>.
 import { readdirSync, readFileSync, existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
@@ -26,7 +26,7 @@ for (const file of pages(root)) {
 	} catch {
 		errors.push(`${file}: JSON-LD does not parse`);
 	}
-	for (const [, href] of html.matchAll(/<a [^>]*href="(\/[^"#]*)/g)) {
+	for (const [, href] of [...html.matchAll(/<a [^>]*href="(\/[^"#]*)/g), ...html.matchAll(/<img [^>]*src="(\/[^"]*)/g)]) {
 		const target = join(root, href);
 		if (!existsSync(target) && !existsSync(join(target, 'index.html'))) errors.push(`${file}: broken link ${href}`);
 	}

@@ -38,8 +38,8 @@ nav:
 <p class="pitch"><a href="sms:+17473196969">Text a photo</a> of the pile. We name a price,<br class="served-break"> then show up the <a href="#how-it-works">same day or the next</a>. <a href="#service-promise">You point, we haul.</a></p>
 
 <ul class="posters">
-<li><a href="sms:+17473196969"><h3>Got a pile?</h3><p>Text a pic to 747-319-6969</p></a></li>
-<li><a href="#how-it-works"><h3>Your price</h3><p>We tell you everything up front</p></a></li>
+<li><a href="sms:+17473196969"><img src="/pile.webp" width="782" height="559" alt="" loading="lazy" decoding="async"><h3>Got a pile?</h3><p>Text a pic to 747-319-6969</p></a></li>
+<li><a href="#how-it-works"><img src="/price.webp" width="736" height="525" alt="" loading="lazy" decoding="async"><h3>Your price</h3><p>We tell you everything up front</p></a></li>
 <li><a href="#area"><h3>The San Fernando Valley</h3><p>We drive out</p></a></li>
 <li><a href="#odd-jobs"><h3>Odd jobs</h3><p>Just ask</p></a></li>
 </ul>
@@ -68,7 +68,7 @@ nav:
 <h2 id="odd-jobs">Odd jobs</h2>
 <p class="closer">We also move furniture, clean up a yard, and handle small demo. Apartment, garage, and estate cleanouts are the same call. Ask us.</p>
 
-<div class="zoom"><button type="button" aria-label="Enlarge photo"><img class="photo" src="/before-after.jpg" width="1024" height="572" alt="A split-screen comparison showing a large amount of furniture and household items scattered outside a house (Before - Stage 1) versus the same items neatly and efficiently packed floor-to-ceiling inside a storage unit (After - Stage 2)."></button></div>
+<div class="zoom"><button type="button" aria-label="Enlarge photo"><img class="photo" src="/before-after.webp" width="1024" height="572" loading="lazy" decoding="async" alt="A split-screen comparison showing a large amount of furniture and household items scattered outside a house (Before - Stage 1) versus the same items neatly and efficiently packed floor-to-ceiling inside a storage unit (After - Stage 2)."></button></div>
 
 <h2 id="questions">Questions</h2>
 <div class="answers">
