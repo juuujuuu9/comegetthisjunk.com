@@ -67,7 +67,7 @@ nav:
 </div>
 
 <h2 id="odd-jobs">Odd jobs</h2>
-<p class="closer">We also move furniture, clean up a yard, and handle small demo. Apartment, garage, and estate cleanouts are the same call. Ask us.</p>
+<p class="closer">We also move furniture, clean up a yard, and handle small demo. Apartment, garage, and estate cleanouts are the same call. Ask us. <a href="/trash-valet/">Trash night, handled →</a></p>
 
 <div class="zoom"><button type="button" aria-label="Enlarge photo"><img class="photo" src="/before-after.webp" width="1024" height="572" loading="lazy" decoding="async" alt="A split-screen comparison showing a large amount of furniture and household items scattered outside a house (Before - Stage 1) versus the same items neatly and efficiently packed floor-to-ceiling inside a storage unit (After - Stage 2)."></button></div>
 

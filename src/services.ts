@@ -11,6 +11,7 @@ export const services: { name: string; slug: string; group: 'haul' | 'pro' | 'in
 	{ name: 'Office furniture removal', slug: 'office-furniture-removal', group: 'haul' },
 	{ name: 'Storage unit cleanout', slug: 'storage-unit-cleanout', group: 'haul' },
 	{ name: 'Fence, patio and pool tear-out', slug: 'fence-patio-pool-tear-out', group: 'haul' },
+	{ name: 'Trash valet', slug: 'trash-valet', group: 'haul' },
 	{ name: 'Junk removal for realtors', slug: 'realtors', group: 'pro' },
 	{ name: 'Junk removal for property managers', slug: 'property-managers', group: 'pro' },
 	{ name: 'Junk removal for contractors', slug: 'contractors', group: 'pro' },
