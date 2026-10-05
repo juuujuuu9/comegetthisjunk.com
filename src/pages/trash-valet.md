@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/Base.astro
 title: "Trash Valet in the San Fernando Valley | Come Get This Junk"
-description: "Trash valet in the San Fernando Valley: we pick up your trash on your schedule so you don't drag cans to the curb. Text or call 747-319-6969 for a plan."
+description: "Trash valet for homes, apartments, and properties in the San Fernando Valley. We pick up on your schedule. Text or call 747-319-6969 for a plan."
 pageH1: "Trash valet in the San Fernando Valley"
 service: "Trash valet"
 faq:
@@ -15,6 +15,29 @@ faq:
     answer: "Just ask. Odd jobs are kind of our thing."
 ---
 <p class="closer">Got trash night? We'll come get that too. Text or call with your address. We name a pickup plan, then show up like clockwork. You set it out, we take it from there.</p>
+
+<div class="split pair">
+<article class="ticket">
+<h2>For homeowners and renters</h2>
+<ul>
+<li>Skip trash night. No dragging cans to the curb.</li>
+<li>Doorstep trash pickup on your day, on your schedule.</li>
+<li>A price quoted up front for your place and your cans.</li>
+<li>Houses, townhomes, and apartments.</li>
+<li>Same crew you can call for a <a href="/garage-cleanout/">garage cleanout</a> or <a href="/furniture-removal/">furniture removal</a>.</li>
+</ul>
+</article>
+<article class="ticket">
+<h2>For property managers and landlords</h2>
+<ul>
+<li>One call covers trash night for the whole property.</li>
+<li>Cleaner grounds, with no overflowing cans or bins left out.</li>
+<li>Recurring pickup on a set schedule, quoted to fit your property.</li>
+<li>Invoicing available by request.</li>
+<li>Same crew handles <a href="/move-out-cleanout/">unit turnover cleanouts</a>. See <a href="/property-managers/">junk removal for property managers</a>.</li>
+</ul>
+</article>
+</div>
 
 <section class="band band-ice">
 <article class="ticket section">

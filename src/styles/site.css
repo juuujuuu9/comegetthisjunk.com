@@ -187,7 +187,8 @@ nav {
 #questions,
 #additional-services,
 h2.section,
-.ticket.section h2 {
+.ticket.section h2,
+.pair h2 {
 	text-align: center;
 	text-decoration: underline;
 	text-decoration-color: var(--color-accent);
