@@ -202,6 +202,11 @@ h2.shout {
 	font-size: 2.8125rem;
 }
 
+/* Phone number sits tight under the hook. */
+.lede + h2.lede {
+	margin-top: 0;
+}
+
 .pitch,
 .served,
 .closer,
