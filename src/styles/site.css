@@ -2,6 +2,8 @@
 	--color-bg: #fff;
 	--color-text: #000;
 	--color-accent: #1b3a8c;
+	/* Ace Hardware red (#e73137), darkened just enough to clear 4.5:1 on white. */
+	--color-call: #e03035;
 	--font-display: Tanker, Impact, sans-serif;
 	--font-body: Switzer, Helvetica, sans-serif;
 	--measure: 72rem;
@@ -427,9 +429,9 @@ footer {
 .go,
 .go:visited {
 	display: inline-block;
-	border: 2px solid var(--color-accent);
+	border: 2px solid var(--color-call);
 	padding: 0.35rem 0.75rem;
-	background: var(--color-accent);
+	background: var(--color-call);
 	color: var(--color-bg);
 	text-decoration: none;
 	white-space: nowrap;
@@ -438,6 +440,7 @@ footer {
 .go-line,
 .go-line:visited {
 	background: var(--color-bg);
+	border-color: var(--color-accent);
 	color: var(--color-accent);
 }
 
@@ -446,15 +449,22 @@ footer {
 .go:focus-visible,
 .go:focus-visible:visited {
 	background: var(--color-bg);
-	color: var(--color-accent);
+	color: var(--color-call);
 }
 
 .go-line:hover,
 .go-line:hover:visited,
 .go-line:focus-visible,
 .go-line:focus-visible:visited {
-	background: var(--color-accent);
+	background: var(--color-call);
+	border-color: var(--color-call);
 	color: var(--color-bg);
+}
+
+h2.lede a,
+h2.lede a:visited {
+	color: var(--color-call);
+	text-decoration: none;
 }
 
 .signoff {
