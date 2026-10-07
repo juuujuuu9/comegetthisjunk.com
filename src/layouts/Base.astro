@@ -245,7 +245,7 @@ const jsonLd = { '@context': 'https://schema.org', '@graph': jsonLdGraph };
 			{
 				frontmatter.pageH1 && (
 					<>
-						<h1 class="lede">{frontmatter.pageH1}</h1>
+						<h1 class:list={['lede', (frontmatter.service || frontmatter.primaryArea) && 'accent']}>{frontmatter.pageH1}</h1>
 						<h2 class="lede">
 							<a href={frontmatter.phoneTel}>{number}</a>
 						</h2>

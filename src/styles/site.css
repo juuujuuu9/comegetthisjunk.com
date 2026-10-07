@@ -202,9 +202,17 @@ h1.lede {
 	font-size: 2.8125rem;
 }
 
+h1.lede.accent {
+	color: var(--color-accent);
+}
+
 h2.lede,
 h2.shout {
 	font-size: 2.8125rem;
+}
+
+h2.lede {
+	color: var(--color-accent);
 }
 
 /* Phone number sits tight under the hook. */
@@ -311,6 +319,7 @@ footer {
 
 .posters h3 {
 	font-size: 2.3625rem;
+	color: var(--color-accent);
 }
 
 /* The drawings are opaque white PNGs; multiply keeps the lines and lets the hover blue show through. */
@@ -342,6 +351,11 @@ footer {
 .posters a:focus-visible,
 .posters a:focus-visible:visited {
 	background: var(--color-accent);
+	color: var(--color-bg);
+}
+
+.posters a:hover h3,
+.posters a:focus-visible h3 {
 	color: var(--color-bg);
 }
 
@@ -417,6 +431,7 @@ footer {
 	align-items: center;
 	gap: 0.65rem;
 	font-weight: 700;
+	color: var(--color-accent);
 }
 
 .actions {

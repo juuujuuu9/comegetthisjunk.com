@@ -39,7 +39,7 @@ nav:
 <p class="pitch"><a href="sms:+17473196969">Text a photo</a> of the pile. We name a price,<br class="served-break"> then show up the <a href="#how-it-works">same day or the next</a>. <a href="#service-promise">You point, we haul.</a></p>
 
 <ul class="posters">
-<li><a href="sms:+17473196969"><img src="/pile.webp" width="782" height="559" alt="" loading="lazy" decoding="async"><h3>Got a pile of junk?</h3><p>Text a pic to 747-319-6969</p></a></li>
+<li><a href="sms:+17473196969"><img src="/pile.webp" width="750" height="535" alt="" loading="lazy" decoding="async"><h3>Got a pile of junk?</h3><p>Text a pic to 747-319-6969</p></a></li>
 <li><a href="#how-it-works"><img src="/price.webp" width="736" height="525" alt="" loading="lazy" decoding="async"><h3>Get your price<br class="mobile-break"> on the spot</h3><p>We tell you everything up front</p></a></li>
 <li><a href="#area"><h3>Proudly serving<br>the San Fernando Valley</h3><p>We drive out</p></a></li>
 <li><a href="#what-we-haul"><h3>Odd jobs</h3><p>Just ask</p></a></li>
